@@ -1,28 +1,27 @@
-
 nav{
 	background-color:dodgerblue;
 	text-align: center;
 	position: sticky;
 	top: 0;
+	padding-top:0.7%;
 	width: 100%;
 	height: 50px;
 	z-index: 100;
+}
 
-}
-.main{
-	transform: translate(0px,-22px);
-}
+
 .navbar a{
-
 	color: black;
 	text-align: center;
 	padding-left: 3%;
 	padding-right: 3%;
 	font-size: 25px;
 	text-decoration:none;
+
+	border-color:gray;
+	border-radius: 15px;
 }
-.navbar a:hover
-{
+.navbar a:hover{
 	background-color: #ddd;
 	color:black;
 }
@@ -39,15 +38,21 @@ nav{
 }
 
 body {
-	
-}
-
-.container {
+ 	width:100%;
+ 	height: 100%;
+    margin: 0;
+    padding: 0;
  	background-color:white;
+ 	min-height: 100%;
+
 }
-.container div{
-	padding-right: 35%;
- 	padding-left: 35%;
+.main{
+	transform: translate(0px,-22px);
+	padding-top:5%;
+	margin-right: 15%;
+ 	margin-left: 15%;
+ 	text-align:center;
  	background-color:powderblue;
+ 	height:100%;
  	
 }
