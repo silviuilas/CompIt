@@ -18,7 +18,7 @@
                     <button class="dropbtn"> --
                     </button>
                 </div>
-            <div/>
+            </div>
     </nav>
 </head>
 
