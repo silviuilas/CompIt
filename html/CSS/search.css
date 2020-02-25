@@ -46,6 +46,9 @@
 	border-radius: 15px;
 	font-size: 25px;
 }
+.logo{
+	display:inline-block;
+}
 .dropbtn{
 }
 .dropdown
@@ -74,7 +77,7 @@
 }
 .dropdown:hover .dropcontent {
   display: block;
-  background-color:#3b3b3b;
+  background-color:#696969;
   border-radius: 15px;
 }
 .dropdown:hover .dropbtn {
@@ -119,6 +122,7 @@ body {
  	background-color:powderblue;
  	max-height:100%;
 }
+
 .footer{
 	transform: translate(0px,-22px);
 	padding-top:1%;
@@ -147,3 +151,4 @@ body {
 	
 
 }
+
