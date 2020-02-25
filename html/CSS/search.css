@@ -17,13 +17,11 @@ nav{
 	padding-right: 3%;
 	font-size: 25px;
 	text-decoration:none;
-
 	border-color:gray;
 	border-radius: 10px;
 }
 .navbar button{
 	display: inline-block;
-	
   	font-size: 25px;
 	border-color:gray;
 	border-radius:10px;
@@ -72,4 +70,14 @@ body {
  	background-color:powderblue;
  	height:100%;
  	
+}
+
+@media only screen and (max-width:1000px)
+{
+	.main{
+		margin:0;
+		background-color:gray;
+	}
+	
+
 }
