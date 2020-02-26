@@ -20,7 +20,7 @@
         <div class="dropcontent">
             <a href="#">Categorii</a>
             <a href="../html_files/login.php">Login</a>
-            <a href="#">Sign Up</a>
+            <a href="../html_files/register.php">Sign Up</a>
             <a href="#">Your Opinion</a>
             <div>
             </div>
