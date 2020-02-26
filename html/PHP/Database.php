@@ -35,6 +35,7 @@ class Database
     public function query($query)
     {
         $db = $this->connect();
+        $query=mysqli::escape_string($query);
         $result = $db->query($query);
 
         if ($db->errno) return false;

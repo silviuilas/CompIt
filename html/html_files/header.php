@@ -19,8 +19,8 @@
         </a>
         <div class="dropcontent">
             <a href="#">Categorii</a>
-            <a href="../html_files/login.php">Login</a>
-            <a href="../html_files/register.php">Sign Up</a>
+            <a href="../html_files/login">Login</a>
+            <a href="../html_files/register">Sign Up</a>
             <a href="#">Your Opinion</a>
             <div>
             </div>

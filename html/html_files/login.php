@@ -1,6 +1,6 @@
 <?php
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    //TO DO MAKE IT SECURE TO SQL INJECTIONS
+    //TO DO MAKE IT SECURE FOR HTML INJECTIONS
     require_once('../PHP/Database.php');
     if (isset($_POST["usrname"])==NULL or isset($_POST["paswd"])==NULL)
     {
@@ -20,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 die();
             }
     }
-    }
+}
 ?>
 
 
@@ -43,6 +43,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
         </form>
 	</div>
-</body>
-</html>
+    </body>
+
 <?php include('footer.php'); ?>

@@ -1,6 +1,6 @@
 <?php
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    //TO DO MAKE IT SECURE TO SQL INJECTIONS
+    //TO DO MAKE IT SECURE FOR HTML INJECTIONS
     require_once('../PHP/Database.php');
     if (isset($_POST["usrname"])==NULL or isset($_POST["paswd"])==NULL)
     {
@@ -9,10 +9,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $db = new Database();
     $db->connect();
-    $name=$_POST["usrname"];
-    $pass=$_POST["paswd"];
+    $name=trim($_POST["usrname"]);
+    $pass=trim($_POST["paswd"]);
     if(isset($_POST["email"]))
-        $email=$_POST["email"];
+        $email=trim($_POST["email"]);
     else
         $email=NULL;
     $result = $db->query("Select * from users_info where username='$name'");
@@ -22,7 +22,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             die();
         }
     }
-    //$db->query("INSERT INTO users_info (username,password) VALUES ('silviuilas1111','qazqazqaz12')");
     $db->query("INSERT INTO users_info (username,password,email) VALUES ('$name','$pass','$email')");
 }
 
@@ -54,5 +53,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
     </body>
-    </html>
 <?php include('footer.php'); ?>
