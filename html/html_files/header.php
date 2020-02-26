@@ -10,7 +10,7 @@
     <title>COMP IT</title>
 
     <nav class="navbar" >
-            <a href="../html/main.html">CompIT</a>
+            <a href="../html/index.php">CompIT</a>
             <input type="text" placeholder="Search...">
             <a href="#">Favorite</a>
             <div class="dropdown"> 
