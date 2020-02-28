@@ -21,9 +21,10 @@ def get_item(sauce,url):
             minprice = int(oneItemObj['price'][:-7])
     temparr = soup.find('h1',class_='hidden-xs').find_all('span')
     fullItem ['name']     = temparr[1].text + ' '+ temparr[2].text
-    fullItem ['url']      = url
-    fullItem ['minprice'] = str(minprice)
     fullItem ['categori'] = soup.find('div',class_="breadcrumb-cat hidden-xs").find_all('a')[1].text
+    fullItem ['minprice'] = str(minprice)
+    fullItem ['url']      = url
+
     if(soup.find('div',class_="col-lg-3 col-md-3 col-sm-3 col-xs-4 product-image").find_all('a',href="True")):
         fullItem ['imglink']  = soup.find('a',attrs={"class": "product-image-wrapper"}).get("href")
     else:
