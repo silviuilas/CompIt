@@ -3,5 +3,4 @@
 <?php include('html_files/footer.php'); ?>
 <?php
 session_start();
-require_once("configure/config.php");
 ?>
