@@ -16,15 +16,20 @@ def get_item(sauce,url):
             "link"    :div.find('a').get('href')
         }
         itemsArr.append(oneItemObj)
-        ronprice=oneItemObj['price'][:-7]
-        if (int(ronprice)< int(minprice)):
-            minprice = int(oneItemObj['price'][:-7])
-    temparr = soup.find('h1',class_='hidden-xs').find_all('span')
-    fullItem ['name']     = temparr[1].text + ' '+ temparr[2].text
-    fullItem ['categori'] = soup.find('div',class_="breadcrumb-cat hidden-xs").find_all('a')[1].text
-    fullItem ['minprice'] = str(minprice)
+        ronprice = oneItemObj['price'][:-7].strip().replace(" ", "")
+        if (int(ronprice) < int(minprice)):
+            minprice = int(ronprice)
+    temp = soup.find('div', class_="breadcrumb-cat hidden-xs")
+    stri=" ".join(temp.getText().split())
+    temparr = temp.find_all('a')
+    for i in range(1,1000):
+        if(stri[-i]is ">"):
+            stri=stri[-(i-2):]
+            break
+    fullItem ['name']     = stri
+    fullItem['categori']  = temparr[1].text
+    fullItem['minprice']  = str(minprice)
     fullItem ['url']      = url
-
     if(soup.find('div',class_="col-lg-3 col-md-3 col-sm-3 col-xs-4 product-image").find_all('a',href="True")):
         fullItem ['imglink']  = soup.find('a',attrs={"class": "product-image-wrapper"}).get("href")
     else:
