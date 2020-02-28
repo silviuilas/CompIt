@@ -24,9 +24,16 @@ class Database
 
             $mysql = new mysqli($this->host, $this->username, $this->password, $this->database);
 
-            if ($mysql->connect_errno) {
-                throw new appError($mysql->connect_error);
+            try {
+                if ($mysql->connect_errno) {
+                    throw new Exception($mysql->connect_error);
+                }
             }
+            catch (Exception $err)
+            {
+                echo 'Error at establishing connection'. $err->getMessage();
+            }
+
             $this->dbconnect = $mysql;
         }
         return $this->dbconnect;
@@ -34,11 +41,13 @@ class Database
 
     public function query($query)
     {
-        $db = $this->connect();
-        $query=mysqli::escape_string($query);
-        $result = $db->query($query);
+        if(empty($this->dbconnect))
+            $this->connect();
+        $query=mysqli_real_escape_string($this->dbconnect,$query);
+        $query=stripslashes($query);
+        $result = $this->dbconnect->query($query);
 
-        if ($db->errno) return false;
+        if ($this->dbconnect->errno) return false;
         return $result;
     }
 

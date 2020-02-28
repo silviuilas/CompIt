@@ -14,7 +14,7 @@
     <input type="text" placeholder="Search...">
     <a href="#">Favorite</a>
     <div class="dropdown">
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <a href="javascript:void(0);" class="icon" onclick="dropDownHamburger()">
             <i class="fa fa-bars"></i>
         </a>
         <div class="dropcontent">
@@ -22,6 +22,6 @@
             <a href="../html_files/login">Login</a>
             <a href="../html_files/register">Sign Up</a>
             <a href="#">Your Opinion</a>
-            <div>
-            </div>
+        </div>
+    </div>
 </nav>
