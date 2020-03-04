@@ -1,10 +1,12 @@
 <?php
+require_once('../configure/config.php');
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     //TO DO MAKE IT SECURE FOR HTML INJECTIONS
-    require_once('../PHP/Database.php');
+
     if (isset($_POST["usrname"])==NULL or isset($_POST["paswd"])==NULL)
     {
         echo "Username sau password bug";
@@ -28,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 
-<?php include('header.php'); ?>
+<?php $_SESSION['header']->show_file_modified()?>
 <!DOCTYPE html>
 <body>
 	<div class="main">
@@ -49,4 +51,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	</div>
     </body>
 
-<?php include('footer.php'); ?>
+<?php $_SESSION['footer']->show_file_modified() ?>

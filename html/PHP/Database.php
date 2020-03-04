@@ -9,13 +9,12 @@ class Database
 
     public function __construct()
     {
-        $init_set=parse_ini_file('../configure/config.php');
+        $init_set=parse_ini_file('../configure/access.php');
 
         $this->host = $init_set['_MYSQL_HOST'];
         $this->database=$init_set['_MYSQL_DB'];
         $this->username = $init_set['_MYSQL_USER'];
         $this->password = $init_set['_MYSQL_PASS'];
-
     }
     public function connect()
     {
