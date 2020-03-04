@@ -1,4 +1,7 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     //TO DO MAKE IT SECURE FOR HTML INJECTIONS
     require_once('../PHP/Database.php');
@@ -13,9 +16,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $pass=$_POST["paswd"];
     $result = $db->query("Select * from users_info where username='$name'");
     if(($row = mysqli_fetch_row($result))!=NULL) {
-        echo implode(" ",$row);
+        //echo implode(" ",$row);
         if ($row[1] == $_POST['usrname'])
             if ($row[2] == $_POST['paswd']) {
+                $_SESSION['username']=$_POST['usrname'];
                 header('Location: http://compit.dev');
                 die();
             }

@@ -24,4 +24,19 @@
             <a href="#">Your Opinion</a>
         </div>
     </div>
+    <a href="../html_files/login">
+    <?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    if(isset($_SESSION['username'])) {
+        echo "Buna ";
+        echo $_SESSION['username'];
+    }
+    else
+    {
+        echo "Login";
+    }
+    ?>
+    </a>
 </nav>

@@ -2,5 +2,7 @@
 <?php include('html_files/index.php'); ?>
 <?php include('html_files/footer.php'); ?>
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
