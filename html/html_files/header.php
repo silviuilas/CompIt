@@ -25,6 +25,6 @@
         </div>
     </div>
     <a href="{URL}/html_files/login">
-        Buna {NAME}
+        Buna, {NAME}
     </a>
 </nav>
