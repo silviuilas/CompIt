@@ -25,18 +25,6 @@
         </div>
     </div>
     <a href="{URL}/html_files/login">
-    <?php
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-    if(isset($_SESSION['username'])) {
-        echo "Buna ";
-        echo $_SESSION['username'];
-    }
-    else
-    {
-        echo "Login";
-    }
-    ?>
+        Buna {NAME}
     </a>
 </nav>
