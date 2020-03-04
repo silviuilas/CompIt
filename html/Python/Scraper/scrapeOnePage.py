@@ -30,7 +30,7 @@ def get_item(sauce,url):
     fullItem['categori']  = temparr[1].text
     fullItem['minprice']  = str(minprice)
     fullItem ['url']      = url
-    if(soup.find('div',class_="col-lg-3 col-md-3 col-sm-3 col-xs-4 product-image").find_all('a',href="True")):
+    if not(soup.find('div',class_="col-lg-3 col-md-3 col-sm-3 col-xs-4 product-image").find_all('a',href="True")):
         fullItem ['imglink']  = soup.find('a',attrs={"class": "product-image-wrapper"}).get("href")
     else:
         fullItem ['imglink']  = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/google/80/black-question-mark-ornament_2753.png'
