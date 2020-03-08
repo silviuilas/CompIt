@@ -21,12 +21,24 @@
         </a>
         <div class="dropcontent">
             <a href="#">Categorii</a>
-            <a href="{URL}/html_files/login">Login</a>
-            <a href="{URL}/html_files/register">Sign Up</a>
+            <a href="{URL}/html_files/login.php">Login</a>
+            <a href="{URL}/html_files/register.php">Sign Up</a>
             <a href="#">Your Opinion</a>
         </div>
     </div>
-    <a href="{URL}/html_files/login">
-        Buna, {NAME}
+    <a href="{URL}/html_files/login.php">
+    <?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    if(isset($_SESSION['username'])) {
+        echo "Buna ";
+        echo $_SESSION['username'];
+    }
+    else
+    {
+        echo "Login";
+    }
+    ?>
     </a>
 </nav>
