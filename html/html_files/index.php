@@ -1,5 +1,7 @@
 
 
+    <?php
+    ?>
    <body class="container"  onload="index_functions();" >
         <div class="oferte">
                 <ul>

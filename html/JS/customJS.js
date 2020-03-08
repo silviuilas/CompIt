@@ -7,20 +7,26 @@ function index_functions()
 
 function rec_items()
 {
-    var text=""
+    var text="";
     var i=0;
     text=text+"<div class='rec_items_wrapper'>";
     for(i=0;i<4;i++)
     {
-        text=text+"<div class='rec_item'> " +
-                        "<img class='rec_img' src='https://p1.akcdn.net/full/451032871.allview-x4-soul-lite-16gb.jpg'>" +
+        var name=items_array[i][2];
+
+        if(name.length>40)
+            name=name.slice(0,38)+"...";
+        text=text+ "<a href='"+items_array[i][5]+"'>"+
+                    "<div class='rec_item'>"+
+                        "<img class='rec_img' src='"+items_array[i][4]+"'>" +
                         "<div class='space'\"></div>"+
-                        "<rec_text>Allview X4 Soul Lite 16GB</rec_text>"+
+                        "<div class='rec_text'>"+name+"</div class='rec_text'>"+
                         "<div class='space'\"></div>"+
-                        "<br>"+
-                        "<br>"+
-                        "<rec_text>De la 1032 RON</rec_text>"+
-                    "</div>";
+                        "<div class='rec_text_price'>" + items_array[i][3] +" RON</div class='rec_text_price'>"+
+                    "</div>"
+                    +"</a>"
+                    ;
+
     }
     text=text+"</div>";
     document.getElementById("rec_box").innerHTML=text;
