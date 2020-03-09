@@ -4,7 +4,6 @@
 	text-align: center;
 	position: sticky;
 	top: 0;
-	padding-top:0.7%;
 	width: 100%;
 	height: 50px;
 	z-index: 100;
@@ -39,6 +38,7 @@
 }
 
 .navbar input[type=text] {
+	width: 90%;
   	padding-left:2%;
   	padding-right:5%;
 	border-style:ridge;
@@ -55,6 +55,9 @@
 {
 	position:relative;
 	display:inline-block;
+	float:left;
+	width: 5%;
+	line-height: 50px;
 }
 .dropcontent{
 	display:none;
@@ -142,13 +145,117 @@ body {
 	max-height:35px;
 
 }
-@media only screen and (max-width:1000px)
+.nav_wrapper{
+	height: 100%;
+	top:0;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+.nav_wrapper .logo_wrap{
+	float:left;
+	width: 15%;
+	margin-top:auto;
+	line-height: 50px;
+}
+.nav_wrapper .fav_warp
 {
+	float:left;
+	width: 15%;
+	line-height: 50px;
+}
+.nav_wrapper .name_wrap
+{
+	line-height: 50px;
+	float:left;
+	width: 30%;
+}
+.nav_wrapper #name{
+
+}
+.search_box{
+	float:left;
+	width: 35%;
+	line-height: 50px;
+}
+.movile_search_box{
+	float:left;
+}
+
+@media only screen and (min-width: 1000px) {
+	.hidden_l {
+		display: none;
+		width: 0;
+		height: 0;
+	}
+}
+@media only screen and (max-width:1000px) and (min-width: 500px)
+{
+	.hidden_m{
+		display: none;
+		width: 0;
+		height: 0;
+	}
+	.nav_wrapper{
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	.nav_wrapper .logo_wrap{
+		float:left;
+		width: 20%;
+	}
+	.nav_wrapper .fav_warp
+	{
+		float:left;
+		width: 15%;
+	}
+	.search_box{
+		float:left;
+		width: 60%;
+	}
+	.navbar a{
+		font-size: 25px;
+	}
 	.main{
 		margin-left:5%;
 		margin-right: 5%;
 	}
-	
-
 }
+@media only screen and (max-width:500px)
+{
+	.dropdown
+	{
+		width: 10%;
+	}
+	.nav_wrapper{
+		margin-left: 2%;
+		margin-right: 2%;
+	}
+	.hidden_s{
+		display: none;
+		width: 0;
+		height: 0;
+	}
+	.nav_wrapper .logo_wrap{
+		float:left;
+		width: 25%;
+		margin-right: 15%;
+	}
+	.nav_wrapper .fav_warp
+	{
+		float:left;
+		margin-left: 20%;
+		width: 25%;
+	}
+	.navbar a{
+		font-size: 20px;
+	}
+	.main{
+		margin-left:5%;
+		margin-right: 5%;
+	}
+}
+
+
+
+
 

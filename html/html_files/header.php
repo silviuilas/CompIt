@@ -12,33 +12,34 @@
     <title>COMP IT</title>
 </head>
 <nav class="navbar" >
-    <a href="{URL}/">CompIT</a>
-    <input type="text" placeholder="Search...">
-    <a href="#">Favorite</a>
-    <div class="dropdown">
-        <a href="javascript:void(0);" class="icon" onclick="dropDownHamburger()">
-            <i class="fa fa-bars"></i>
-        </a>
-        <div class="dropcontent">
-            <a href="#">Categorii</a>
-            <a href="{URL}/html_files/login.php">Login</a>
-            <a href="{URL}/html_files/register.php">Sign Up</a>
-            <a href="#">Your Opinion</a>
+    <div class="nav_wrapper">
+        <div class="dropdown">
+            <a href="javascript:void(0);" class="icon" onclick="dropDownHamburger()">
+                <i class="fa fa-bars"></i>
+            </a>
+            <div class="dropcontent">
+                <a href="#">Categorii</a>
+                <a href="{URL}/html_files/login.php">Login</a>
+                <a href="{URL}/html_files/register.php">Sign Up</a>
+                <a href="#">Your Opinion</a>
+            </div>
+        </div>
+        <div class="logo_wrap">
+            <a href="{URL}/" id="logo">CompIT</a>
+        </div>
+        <form class="search_box hidden_s"action="{URL}/PHP/search.php" method="get">
+            <input type="text" name="search" placeholder="Search...">
+        </form>
+        <div class="fav_warp">
+            <a href="#" id="fav">Favorite</a>
+        </div>
+        <div class="name_wrap hidden_m hidden_s">
+            <a href="{URL}/html_files/login.php" id="name">
+                Buna, {NAME}
+            </a>
         </div>
     </div>
-    <a href="{URL}/html_files/login.php">
-    <?php
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-    if(isset($_SESSION['username'])) {
-        echo "Buna ";
-        echo $_SESSION['username'];
-    }
-    else
-    {
-        echo "Login";
-    }
-    ?>
-    </a>
+    <form class="mobile_search_box hidden_m hidden_l"action="{URL}/PHP/search.php" method="get">
+        <input type="text" name="search" placeholder="Search...">
+    </form>
 </nav>
