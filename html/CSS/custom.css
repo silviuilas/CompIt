@@ -25,11 +25,10 @@
 }
 .rec_item {
     transition: transform 1s;
-    position: relative; top: 0px; margin-right: 15px; margin-left: 15px;
-    display:inline-block;
+    top:1px;
+    position: relative; margin-right: 15px; margin-left: 15px;
     outline: 1px solid lightslategray;
-    padding: 1.25%;
-    height: 250px;
+    height: 240px;
     width: 120px;
     background: white;
 }
