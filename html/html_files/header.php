@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{URL}/CSS/search.css">
     <link rel="stylesheet" href="{URL}/CSS/custom.css">
+    <link rel="stylesheet" href="{URL}/CSS/search_page.css">
     <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/money-and-finance/512/find-512.png">
-    <script src="{URL}/JS/customJS.js"></script>
+    <script defer src="{URL}/JS/customJS.js"></script>
+    <script defer src="{URL}/JS/search.js"></script>
     <title>COMP IT</title>
 </head>
 <nav class="navbar" >
@@ -27,7 +29,7 @@
         <div class="logo_wrap">
             <a href="{URL}/" id="logo">CompIT</a>
         </div>
-        <form class="search_box hidden_s"action="{URL}/PHP/search.php" method="get">
+        <form class="search_bar_box hidden_s"action="{URL}/PHP/search.php" method="get">
             <input type="text" name="search" placeholder="Search...">
         </form>
         <div class="fav_warp">
@@ -39,7 +41,7 @@
             </a>
         </div>
     </div>
-    <form class="mobile_search_box hidden_m hidden_l"action="{URL}/PHP/search.php" method="get">
+    <form class="mobile_search_bar_box hidden_m hidden_l"action="{URL}/PHP/search.php" method="get">
         <input type="text" name="search" placeholder="Search...">
     </form>
 </nav>

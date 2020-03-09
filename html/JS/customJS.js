@@ -1,5 +1,4 @@
-function index_functions()
-{
+function index_functions() {
     rec_items();
 }
 var max_items=20;
@@ -22,23 +21,21 @@ function showSlides(n){
             slideIndex=1;
         }
 }
-function rec_items()
-{
+function rec_items() {
     let text="";
     let i=0;
     text=text+"<div class='rec_items_wrapper'>";
-    for(i=0;i<max_items;i++)
-    {
-        var name=items_array[i][2];
+    for(i=0;i<max_items;i++) {
+        var name=rec_items_array[i][2];
         if(name.length>40)
             name=name.slice(0,38)+"...";
-        text=text+ "<a href='"+items_array[i][5]+"'>"+
+        text=text+ "<a href='"+rec_items_array[i][5]+"'>"+
                     "<div class='rec_item'>"+
-                        "<img class='rec_img' src='"+items_array[i][4]+"'>" +
+                        "<img class='rec_img' src='"+rec_items_array[i][4]+"'>" +
                         "<div class='space'\"></div>"+
                         "<div class='rec_text'>"+name+"</div class='rec_text'>"+
                         "<div class='space'\"></div>"+
-                        "<div class='rec_text_price'>" + items_array[i][3] +" RON</div class='rec_text_price'>"+
+                        "<div class='rec_text_price'>" + rec_items_array[i][3] +" RON</div class='rec_text_price'>"+
                     "</div>"
                     +"</a>"
                     ;
