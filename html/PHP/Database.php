@@ -9,7 +9,7 @@ class Database
 
     public function __construct()
     {
-        $init_set=parse_ini_file('../configure/access.php');
+        $init_set=parse_ini_file(_FULL_PATH.'/configure/access.php');
 
         $this->host = $init_set['_MYSQL_HOST'];
         $this->database=$init_set['_MYSQL_DB'];
@@ -63,5 +63,13 @@ class Database
         }
 
         return $rows;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDbconnect()
+    {
+        return $this->dbconnect;
     }
 }
