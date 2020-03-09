@@ -117,6 +117,7 @@ body {
 }
 .main{
 	transform: translate(0px,-22px);
+	overflow: hidden;
 	padding-top:1%;
 	padding-bottom:1%;
 	margin-right: 15%;

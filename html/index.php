@@ -6,7 +6,7 @@ $db->connect();
 $query = $db->query("Select * from items");
 $i=0;
 $table=[];
-while(($row=mysqli_fetch_row($query))!=NULL && $i<12)
+while(($row=mysqli_fetch_row($query))!=NULL && $i<50)
 {$table[$i]=$row;
     $i++;
 }
