@@ -6,15 +6,16 @@ var slideIndex = 1;
 //showSlides(slideIndex);
 
 function plusSlides(n) {
-    if(n<0 || n>max_items/2-1)
-        throw("Error");
     showSlides(slideIndex += n);
 }
 
 function showSlides(n){
     let x = document.getElementsByClassName("rec_item");
     let i;
-    if(n===0)
+    if(n>=(max_items/2)-2) {
+        slideIndex=1;
+    }
+    if(n<=0)
         {slideIndex=(max_items/2)-2;
         }
     n=slideIndex;
@@ -22,9 +23,7 @@ function showSlides(n){
     for (i = 0; i < x.length; i++) {
         x[i].style.transform = "translateX(-" + precent + "px)";
     }
-    if(n===(max_items/2)-2) {
-            slideIndex=0;
-        }
+
 
 }
 function rec_items() {
