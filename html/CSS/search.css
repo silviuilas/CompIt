@@ -126,7 +126,6 @@ body {
 }
 
 .footer{
-	transform: translate(0px,-22px);
 	padding-top:1%;
 	padding-bottom:1%;
 	text-align:center;
@@ -172,6 +171,7 @@ body {
 
 }
 .search_bar_box{
+	margin-top:0.5%;
 	float:left;
 	width: 35%;
 	line-height: 50px;
