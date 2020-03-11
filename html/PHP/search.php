@@ -14,7 +14,7 @@
     $php_array = $table;
     $search_js_array = json_encode($php_array);
 
-    $search = new CustomTemp('html_files/search.php',array('SEARCH' => $search_for,'NUMAR_PRODUSE'=>$i));
+    $search = new CustomTemp('html_files/search.php',array('SEARCH' => $search_for,'NUMAR_PRODUSE'=>$i,'URL'=>_SITE_URL));
     $search->show_file_modified();
 ?>
 <script> var search_items_array= <?php echo $search_js_array; ?> </script>

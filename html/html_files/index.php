@@ -26,5 +26,6 @@
             <p>My first paragraph.</p>center
             <p>My first paragraph.</p>center
         </div>
-
+        <script defer src="{URL}/JS/customJS.js"></script>
+        <script defer src="{URL}/JS/Swipe.js"></script>
 

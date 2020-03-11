@@ -1,6 +1,5 @@
 <?php
 require_once ('../configure/config.php');
-$_SESSION['header']->update_array_key('ONLOAD_JS','search_items();');
 $_SESSION['header']->show_file_modified()?>
     <div class="main">
         <div class="search_container">
@@ -11,4 +10,5 @@ $_SESSION['header']->show_file_modified()?>
             </div>
         </div>
     </div>
+    <script defer src="{URL}/JS/search.js"></script>
 <?php $_SESSION['footer']->show_file_modified() ?>

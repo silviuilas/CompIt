@@ -1,4 +1,6 @@
-
+$(function() {
+   search_items();
+});
 function search_items() {
     let text="";
     let i=0;

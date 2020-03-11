@@ -1,3 +1,7 @@
+$(function() {
+    index_functions();
+});
+index_functions();
 function index_functions() {
     rec_items();
 }

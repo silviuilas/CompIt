@@ -9,12 +9,11 @@
     <link rel="stylesheet" href="{URL}/CSS/custom.css">
     <link rel="stylesheet" href="{URL}/CSS/search_page.css">
     <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/money-and-finance/512/find-512.png">
-    <script defer src="{URL}/JS/customJS.js"></script>
-    <script defer src="{URL}/JS/search.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>COMP IT</title>
 </head>
 
-<body class="container"  onload="{ONLOAD_JS}" >
+<body class="container">
     <nav class="navbar" >
         <div class="nav_wrapper">
             <div class="dropdown">
