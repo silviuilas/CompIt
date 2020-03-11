@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<body>
+
 <div class="main">
     <div  style="position:relative;float:left;width: 100%;">
     <div style="position:relative;float:left;width: 30%;">
@@ -25,4 +24,3 @@ max-height:200px;width: auto;object-fit: cover;">
     </div>
     <div class="space"></div>
 </div>
-</body>

@@ -1,6 +1,6 @@
 <?php
-define("_SITE_URL","http://compit.dev");
-define("_FULL_PATH","/home/silviu/PhpstormProjects/Web/html");
+define("_SITE_URL","http://silviuilas.go.ro");
+define("_FULL_PATH","/opt/lampp/htdocs/html");
 require_once(_FULL_PATH.'/PHP/Database.php');
 include(_FULL_PATH.'/PHP/CustomTemp.php');
 
@@ -11,6 +11,8 @@ if(!isset($_SESSION['header'])) {
     $header = new CustomTemp('html_files/header.php', array('URL' => _SITE_URL, 'NAME' => "Oaspete"));
     $_SESSION['header'] = $header;
 }
+
+$_SESSION['header']->update_array_key('ONLOAD_JS','');
 if(!isset($_SESSION['footer'])) {
     $footer = new CustomTemp('html_files/footer.php', array('URL' => _SITE_URL));
     $_SESSION['footer']=$footer;

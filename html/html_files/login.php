@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($row[1] == $_POST['usrname'])
             if ($row[2] == $_POST['paswd']) {
                 $_SESSION['header']->update_array(array('NAME'=>$_POST['usrname']));
-                header('Location: http://compit.dev');
+                header('Location: '._SITE_URL);
                 die();
             }
     }
@@ -30,10 +30,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <?php $_SESSION['header']->show_file_modified()?>
-<!DOCTYPE html>
-<body>
 	<div class="main">
-        <form action="" method="post">
+        <form method="post">
                 <br>
                 <div>
                 <label for="usrname">Nume</label>
@@ -48,6 +46,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
         </form>
 	</div>
-    </body>
 
 <?php $_SESSION['footer']->show_file_modified() ?>

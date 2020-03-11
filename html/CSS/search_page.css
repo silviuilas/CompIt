@@ -6,7 +6,7 @@
 #search_name{
     font-size:35px;
     width: 100%;
-    flaot:left;
+    float:left;
     outline:1px solid black;
 }
 .search_items_wrapper{

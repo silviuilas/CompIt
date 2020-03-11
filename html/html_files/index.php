@@ -1,8 +1,4 @@
 
-
-    <?php
-    ?>
-   <body class="container"  onload="index_functions();" >
         <div class="main">
             <div class="rec_upper_div">
                 <br>
@@ -30,7 +26,5 @@
             <p>My first paragraph.</p>center
             <p>My first paragraph.</p>center
         </div>
-   </body>
-
 
 

@@ -1,8 +1,7 @@
 <?php
 require_once ('../configure/config.php');
+$_SESSION['header']->update_array_key('ONLOAD_JS','search_items();');
 $_SESSION['header']->show_file_modified()?>
-    <!DOCTYPE html>
-    <body class="container" onload="search_items()";>
     <div class="main">
         <div class="search_container">
             <div id="search_name">
@@ -12,5 +11,4 @@ $_SESSION['header']->show_file_modified()?>
             </div>
         </div>
     </div>
-    </body>
 <?php $_SESSION['footer']->show_file_modified() ?>
