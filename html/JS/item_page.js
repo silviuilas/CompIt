@@ -12,18 +12,20 @@ function load_prices_ajax(){
 
             function showElement(item) {
                 document.getElementById('prices_list').innerHTML +=
+                    "<a href='"+item['link']+"'>"+
                     "<div class='in_item'>" +
-                    "<div class='in_item_shopimg_box'>" +
-                    "<img class='in_item_shopimg_img'src='" + item['shopimg'] + "'>" +
-                    "</img>" +
-                    "</div>" +
-                    "<div class='in_item_shopname'>" +
-                    item['shopname'] +
-                    "</div>" +
-                    "<div class='in_item_price'>" +
-                    item['price'] +
-                    "</div>" +
+                        "<div class='in_item_shopimg_box'>" +
+                            "<img class='in_item_shopimg_img'src='" + item['shopimg'] + "'>" +
+                        "</img>" +
+                        "</div>" +
+                        "<div class='in_item_shopname'>" +
+                            item['shopname'] +
+                        "</div>" +
+                        "<div class='in_item_price'>" +
+                            item['price'] +
+                        "</div>" +
                     "</div>"+
+                    "</a>"+
                     "<div class='space'></div>";
 
             }
