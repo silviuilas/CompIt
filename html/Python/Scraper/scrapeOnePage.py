@@ -10,8 +10,12 @@ def get_item(sauce,url):
     itemsArr = []
     minprice=1000000
     for div in soup.find_all('div',class_='optoffer device-desktop'):
+        shopimg= div.find('div',class_="col-logo").find('div',class_='img-wrap').find('img').get('src')
+        if(shopimg==None):
+            shopimg=div.find('div',class_="col-logo").find('div',class_='img-wrap').find('img').get('data-lazy-src')
         oneItemObj = {
             "shopname":div.find('div',class_="shopname").text,
+            "shopimg" : shopimg,
             "price"   :div.find('div',class_='row-price').text,
             "link"    :div.find('a').get('href')
         }
@@ -30,12 +34,14 @@ def get_item(sauce,url):
     fullItem['categori']  = temparr[1].text
     fullItem['minprice']  = str(minprice)
     fullItem ['url']      = url
-    if not(soup.find('div',class_="col-lg-3 col-md-3 col-sm-3 col-xs-4 product-image").find_all('a',href="True")):
+    if(soup.find('div',class_="col-lg-3 col-md-3 col-sm-3 col-xs-4 product-image").find_all('a',href="True")):
         fullItem ['imglink']  = soup.find('a',attrs={"class": "product-image-wrapper"}).get("href")
-    else:
-        fullItem ['imglink']  = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/google/80/black-question-mark-ornament_2753.png'
+    elif(soup.find_all('span',class_='product-image-wrapper')):
+        fullItem ['imglink']  = soup.find('span',class_='product-image-wrapper').find('img').get("src")
+
     fullItem ['items']    = itemsArr
     return fullItem
+
 
 url = sys.argv[1]
 sauce = urllib.request.urlopen(url).read()

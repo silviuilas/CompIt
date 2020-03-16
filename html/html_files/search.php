@@ -6,6 +6,7 @@ $_SESSION['header']->show_file_modified()?>
             <div id="search_name">
                 {NUMAR_PRODUSE} de rezultate pentru "{SEARCH}"
             </div>
+            <div class="space"></div>
             <div id="search_box">
             </div>
         </div>

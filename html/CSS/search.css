@@ -91,7 +91,6 @@ body {
     margin: 0;
     padding: 0;
 	background-color:#d1d0cf;
- 	min-height: 100%;
 
 }
 .oferte{
@@ -122,7 +121,6 @@ body {
  	margin-left: 15%;
  	text-align:center;
  	background-color:white;
- 	max-height:100%;
 }
 
 .footer{

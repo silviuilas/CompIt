@@ -1,0 +1,60 @@
+
+$(function() {
+    //load_prices();
+    load_prices_ajax();
+});
+
+function load_prices_ajax(){
+    function modify_prices(data_array){
+        if(data_array!=null) {
+            if (data_array['imglink'] != null)
+                document.getElementById('img_style').src = data_array['imglink'];
+
+            function showElement(item) {
+                document.getElementById('prices_list').innerHTML +=
+                    "<div class='in_item'>" +
+                    "<div class='in_item_shopimg'>" +
+                    "<img src='" + item['shopimg'] + "'>" +
+                    "</img>" +
+                    "</div>" +
+                    "<div class='in_item_shopname'>" +
+                    item['shopname'] +
+                    "</div>" +
+                    "<div class='in_item_price'>" +
+                    item['price'] +
+                    "</div>" +
+                    "</div>";
+            }
+
+
+            document.getElementById('prices_list').innerHTML += "<div class='in_items_wrapper'>";
+            data_array['items'].forEach(showElement);
+            document.getElementById('prices_list').innerHTML += '</div>';
+            console.log(data_array);
+        }
+
+    }
+
+    let _current_url = _URL + "/API/api.php?name=" + document.getElementById('item_name').innerText;
+    $.ajax({
+        url: _current_url,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function(result){
+            modify_prices(result.data);
+        }
+    })
+}
+
+async function load_prices() {
+    let proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const response = await fetch(_URL + "/API/api.php?name=" + document.getElementById('item_name').innerText);
+    fetch(_URL)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            console.log(data);
+        });
+    document.getElementById('prices_list').innerHTML = "test";
+}

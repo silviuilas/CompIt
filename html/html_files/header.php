@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{URL}/CSS/search.css">
     <link rel="stylesheet" href="{URL}/CSS/custom.css">
+    <link rel="stylesheet" href="{URL}/CSS/item_page.css">
     <link rel="stylesheet" href="{URL}/CSS/search_page.css">
     <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/money-and-finance/512/find-512.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

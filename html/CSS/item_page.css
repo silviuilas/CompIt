@@ -1,0 +1,13 @@
+.information_container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    outline: darkgray solid 3px;
+}
+.img_item_container{
+    margin-right: 30px;
+}
+.img_item_container #img_style{
+    height: auto;
+    width: 200px;
+}

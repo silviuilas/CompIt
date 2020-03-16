@@ -1,14 +1,15 @@
-<?php require_once('../configure/config.php');
-$_SESSION['header']->show_file_modified()?>
+<?php require_once('../configure/config.php'); ?>
 
 <?php
-$command = escapeshellcmd('../Python/Scraper/scrapeOnePage.py https://www.compari.ro/telefoane-mobile-c3277/allview/x4-soul-lite-16gb-p377956263/');
-$output = shell_exec($command);
-$array = json_decode($output,true);
-var_dump($array);
-echo $array['name']."<br>";
+$name = $_GET['name'];
+$db = new Database();
+$db->connect();
+$query = $db->query("Select * from items where name ='".$name."'");
+$row=mysqli_fetch_row($query);
+$subcategory=$row[1];
+$query = $db->query("Select * from subcategory as sub join category as cat on sub.id_category=cat.id where sub.id='".$subcategory."'");
+$row1=mysqli_fetch_row($query);
+$array=array('URL'=>_SITE_URL,'name'=>$row[2],'minprice'=>$row[3],'imglink'=>$row[4],'categori'=>$row1[4]);
 $item = new CustomTemp('html_files/item.php',$array);
 $item->show_file_modified();
 ?>
-
-.<?php $_SESSION['footer']->show_file_modified(); ?>

@@ -35,10 +35,12 @@ function rec_items() {
     let i=0;
     text=text+"<div class='rec_items_wrapper'>";
     for(i=0;i<max_items;i++) {
-        var name=rec_items_array[i][2];
+        //THIS IS MADE TO MAKE A COPY OF A STRING
+        let name = (' ' + rec_items_array[i][2]).slice(1);
         if(name.length>40)
             name=name.slice(0,38)+"...";
-        text=text+ "<a href='"+rec_items_array[i][5]+"'>"+
+                    //TODO MAKE LINK DYNAMIC
+        text=text+ "<a href='"+"http://www.compit.dev"+"/PHP/pageGenerator.php?name="+rec_items_array[i][2]+"'>"+
                     "<div class='rec_item'>"+
                         "<img class='rec_img' src='"+rec_items_array[i][4]+"'>" +
                         "<div class='space'\"></div>"+

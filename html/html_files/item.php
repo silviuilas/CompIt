@@ -1,26 +1,21 @@
-
+<?php
+require_once ('../configure/config.php');
+$_SESSION['header']->show_file_modified()?>
 <div class="main">
-    <div  style="position:relative;float:left;width: 100%;">
-    <div style="position:relative;float:left;width: 30%;">
-        <img src={imglink} style="height: auto;max-width:100%;
-max-height:200px;width: auto;object-fit: cover;">
+    <div class="information_container">
+        <div class="img_item_container">
+            <img id="img_style" src={imglink}>
+        </div>
+        <div>
+            <h2 id="item_name">{name}</h2>
+            <h3>{categori}</h3>
+            <h3 id="minprice">De la {minprice} RON</h3>
+        </div>
     </div>
-    <div style="position:relative;float:left;width: 70%;">
-        <h1>{name}</h1>
-        <h2>{categori}</h2>
-        <h2>De la {minprice} RON</h2>
-    </div>
-    </div>
-    <div style="position:relative;float:left;width: 100%; clear:left;">
-        <p> {items[0][shopname]}</p>
-        <p> {items[0][price]}</p>
-        <a href="{items[0][link]}">Cumpara aici</a>
-    </div>
-    <br>
-    <div style="position:relative;float:left;width: 100%; clear:left;">
-        <p> {items[1][shopname]}</p>
-        <p> {items[1][price]}</p>
-        <a href="{items[1][link]}">Cumpara aici</a>
-    </div>
-    <div class="space"></div>
+   <div id="prices_list">
+   </div>
 </div>
+
+<script src="{URL}/JS/item_page.js"></script>
+
+<?php $_SESSION['footer']->show_file_modified() ?>
