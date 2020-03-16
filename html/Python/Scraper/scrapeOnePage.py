@@ -34,14 +34,13 @@ def get_item(sauce,url):
     fullItem['categori']  = temparr[1].text
     fullItem['minprice']  = str(minprice)
     fullItem ['url']      = url
-    if(soup.find('div',class_="col-lg-3 col-md-3 col-sm-3 col-xs-4 product-image").find_all('a',href="True")):
+    if(soup.find('a', attrs={"class": "product-image-wrapper"})):
         fullItem ['imglink']  = soup.find('a',attrs={"class": "product-image-wrapper"}).get("href")
     elif(soup.find_all('span',class_='product-image-wrapper')):
         fullItem ['imglink']  = soup.find('span',class_='product-image-wrapper').find('img').get("src")
 
     fullItem ['items']    = itemsArr
     return fullItem
-
 
 url = sys.argv[1]
 sauce = urllib.request.urlopen(url).read()

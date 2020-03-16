@@ -13,8 +13,8 @@ function load_prices_ajax(){
             function showElement(item) {
                 document.getElementById('prices_list').innerHTML +=
                     "<div class='in_item'>" +
-                    "<div class='in_item_shopimg'>" +
-                    "<img src='" + item['shopimg'] + "'>" +
+                    "<div class='in_item_shopimg_box'>" +
+                    "<img class='in_item_shopimg_img'src='" + item['shopimg'] + "'>" +
                     "</img>" +
                     "</div>" +
                     "<div class='in_item_shopname'>" +
@@ -23,7 +23,9 @@ function load_prices_ajax(){
                     "<div class='in_item_price'>" +
                     item['price'] +
                     "</div>" +
-                    "</div>";
+                    "</div>"+
+                    "<div class='space'></div>";
+
             }
 
 
