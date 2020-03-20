@@ -12,7 +12,6 @@ if(!isset($_SESSION['header'])) {
     $_SESSION['header'] = $header;
 }
 
-$_SESSION['header']->update_array_key('ONLOAD_JS','');
 if(!isset($_SESSION['footer'])) {
     $footer = new CustomTemp('html_files/footer.php', array('URL' => _SITE_URL));
     $_SESSION['footer']=$footer;
