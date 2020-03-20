@@ -1,5 +1,5 @@
 
-html/html_files/test.php
 html/configure/config.php
-*.php
-*.php
+html/configure/access.php
+/html/Python/Scraper/.idea/
+/.idea/
