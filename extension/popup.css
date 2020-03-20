@@ -1,0 +1,33 @@
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+#taci {
+    position:relative;
+    float:left;
+    text-align: center;
+    width: 100%;
+    animation-name:            rotate;
+    animation-duration:        1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.checkPageWrapper{
+    position:fixed;
+    float:left;
+    text-align: center;
+    width: 100%;
+    bottom:0;
+}
+
+#checkPage{
+
+}
+.main{
+    width: 400px;
+    height: 400px;
+}
