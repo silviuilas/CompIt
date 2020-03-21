@@ -4,10 +4,10 @@ $_SESSION['header']->show_file_modified()?>
     <div class="main">
         <div class="search_container">
             <div id="search_name">
-                {NUMAR_PRODUSE} de rezultate pentru "{SEARCH}"
+                Rezultate pentru "{SEARCH}"
             </div>
             <div class="space"></div>
-            <div id="search_box">
+            <div class='search_items_wrapper' id="search_box">
             </div>
         </div>
     </div>

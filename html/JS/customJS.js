@@ -40,7 +40,7 @@ function rec_items() {
         if(name.length>40)
             name=name.slice(0,38)+"...";
                     //TODO MAKE LINK DYNAMIC
-        text=text+ "<a href='"+"http://www.compit.dev"+"/PHP/pageGenerator.php?name="+rec_items_array[i][2]+"'>"+
+        text=text+ "<a href='"+_URL+"/PHP/pageGenerator.php?name="+rec_items_array[i][2]+"'>"+
                     "<div class='rec_item'>"+
                         "<img class='rec_img' src='"+rec_items_array[i][4]+"'>" +
                         "<div class='space'\"></div>"+
