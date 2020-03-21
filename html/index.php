@@ -3,7 +3,7 @@
 
 $db = new Database();
 $db->connect();
-$query = $db->query("Select * from items");
+$query = $db->query("Select * from items order by views desc");
 $i=0;
 $table=[];
 while(($row=mysqli_fetch_row($query))!=NULL && $i<50)

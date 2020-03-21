@@ -1,38 +1,38 @@
 var name=document.getElementById("search_name").innerText.slice(18).slice(0,-1);
 var offset=0;
 var search_items_array=[];
-var ok=0;
+var fadeInAnimationComplete=0;
 
 $(window).scroll(function() {
     if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-        if(ok==0)
-            {   ok=1;
-                load_search_items(offset);
-            }
+        load_search_items();
     }
 });
 
 function load_search_items(){
-    let _current_url = _URL + "/API/search_api.php?search=" +name+"&offset="+offset*25;
-    let _short_url= _URL + "/API/search_api.php";
-    $.ajax({
-        url: _current_url,
-        contentType: "application/json",
-        dataType: 'json',
-        success: function(result){
-            result.data.forEach(function (item){
-            search_items_array.push(item);
-            });
-            search_items();
-            offset++;
-        }
-    });
+    //Don't request until all the animations have ended
+    if(fadeInAnimationComplete===0) {
+        fadeInAnimationComplete=1;
+        let _current_url = _URL + "/API/search_api.php?search=" + name + "&offset=" + offset * 25;
+        $.ajax({
+            url: _current_url,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (result) {
+                result.data.forEach(function (item) {
+                    search_items_array.push(item);
+                });
+                search_items(offset);
+                offset++;
+            }
+        });
+    }
 }
-function search_items() {
+function search_items(off) {
     let text = "";
     let i;
 
-    for (i = offset*25; i < search_items_array.length; i++) {
+    for (i = off*25; i < search_items_array.length; i++) {
         var name = search_items_array[i][2];
         if (name.length > 40)
             name = name.slice(0, 38) + "...";
@@ -49,13 +49,14 @@ function search_items() {
     }
     document.getElementById("search_box").innerHTML += text;
     let x = document.getElementsByClassName("rec_item");
-    for (i = offset*25; i < search_items_array.length; i++) {
+    for (i = off*25; i < search_items_array.length-1; i++) {
         $(x[i]).hide().fadeIn(1000);
     }
-    setTimeout(function() {
-        ok=0;
-    }, 1100);
-
+    $(x[24]).hide().fadeIn(1000,function(){
+        //When all the animations are over
+        fadeInAnimationComplete=0;
+        if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+        load_search_items();
+    }});
 }
-ok=1;
-load_search_items(0);
+load_search_items();

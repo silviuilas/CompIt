@@ -15,7 +15,13 @@ if(!empty($_GET['offset']))
     $offset= $_GET['offset'];
 else
     $offset=0;
-$query = $db->query("Select * from items where name LIKE '%".$search_for."%' limit ".$limit." offset ".$offset);
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if(!isset($_SESSION['search_query']));{
+    $_SESSION['search_query'] = $db->query("Select * from items where name LIKE '%".$search_for."%' limit ".$limit." offset ".$offset);
+}
+$query=$_SESSION['search_query'];
 $i=0;
 $table=[];
 while(($row=mysqli_fetch_row($query))!=NULL) {

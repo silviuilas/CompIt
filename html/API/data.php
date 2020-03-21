@@ -9,6 +9,7 @@ function get_price($name,$filter)
     $db->connect();
     $query = $db->query("Select * from items where name like '%".$name."%'");
     $row=mysqli_fetch_row($query);
+    $update= $db->query("Update items set views=".($row[6]+1)." where id=".$row[0]);
     if($row!=NULL) {
         $command = escapeshellcmd('../Python/Scraper/scrapeOnePage.py '.$row[5]);
         $output = shell_exec($command);

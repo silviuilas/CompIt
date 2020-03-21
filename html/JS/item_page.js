@@ -34,7 +34,6 @@ function load_prices_ajax(){
             document.getElementById('prices_list').innerHTML += "<div class='in_items_wrapper'>";
             data_array['items'].forEach(showElement);
             document.getElementById('prices_list').innerHTML += '</div>';
-            console.log(data_array);
         }
 
     }
