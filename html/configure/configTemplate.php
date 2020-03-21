@@ -16,5 +16,3 @@ if(!isset($_SESSION['footer'])) {
     $footer = new CustomTemp('html_files/footer.php', array('URL' => _SITE_URL));
     $_SESSION['footer']=$footer;
 }
-?>
-<script>var _URL="<?php echo _SITE_URL?>" </script>

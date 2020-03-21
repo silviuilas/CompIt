@@ -1,8 +1,5 @@
-
 <?php
-define("_SITE_URL","http://compit.dev");
-define("_FULL_PATH","/home/silviu/PhpstormProjects/Web/html");
-require_once(_FULL_PATH.'/PHP/Database.php');
+require_once ('../configure/config.php');
 
 $db = new Database();
 $db->connect();
