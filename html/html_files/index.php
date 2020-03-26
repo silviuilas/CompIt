@@ -1,11 +1,13 @@
 
         <div class="main">
-            <div class="rec_upper_div">
+            <div class="item_upper_div">
                 <br>
                 <br>
-                <div class="rec_upper_text">Produse Recomandate</div>
+                <div class="item_upper_text">Produse Recomandate</div>
                 <div class="space"></div>
                 <div id="rec_box" class="rec_box">
+                </div>
+                <div id="last_viewed">
                 </div>
             </div>
             <h1>My First Heading</h1>
@@ -28,4 +30,5 @@
         </div>
         <script defer src="{URL}/JS/customJS.js"></script>
         <script defer src="{URL}/JS/Swipe.js"></script>
+        <script defer src="{URL}/JS/ItemsSliderClass.js"></script>
 

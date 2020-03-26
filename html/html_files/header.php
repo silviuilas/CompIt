@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{URL}/CSS/custom.css">
     <link rel="stylesheet" href="{URL}/CSS/item_page.css">
     <link rel="stylesheet" href="{URL}/CSS/search_page.css">
+    <link rel="stylesheet" href="{URL}/CSS/item_slider.css">
     <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/money-and-finance/512/find-512.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>COMP IT</title>

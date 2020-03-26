@@ -37,18 +37,18 @@ function search_items(off) {
         if (name.length > 40)
             name = name.slice(0, 38) + "...";
         text = text + "<a href='"+_URL+"/PHP/pageGenerator.php?name="+search_items_array[i][2]+"'>"+
-            "<div class='rec_item'>" +
-            "<img class='rec_img' src='" + search_items_array[i][4] + "'>" +
+            "<div class='item_slide'>" +
+            "<img class='item_slide_img' src='" + search_items_array[i][4] + "'>" +
             "<div class='space'\"></div>" +
-            "<div class='rec_text'>" + name + "</div class='rec_text'>" +
+            "<div class='item_slide_text'>" + name + "</div class='rec_text'>" +
             "<div class='space'\"></div>" +
-            "<div class='rec_text_price'>" + search_items_array[i][3] + " RON</div class='rec_text_price'>" +
+            "<div class='item_slide_price'>" + search_items_array[i][3] + " RON</div class='rec_text_price'>" +
             "</div>"
-            + "</a>"
+            +"</a>"
         ;
     }
     document.getElementById("search_box").innerHTML += text;
-    let x = document.getElementsByClassName("rec_item");
+    let x = document.getElementById("search_box").getElementsByClassName("item_slide");
     for (i = off*25; i < search_items_array.length-1; i++) {
         $(x[i]).hide().fadeIn(1000);
     }

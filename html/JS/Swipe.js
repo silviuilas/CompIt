@@ -4,7 +4,7 @@ class Swipe {
         this.yDown = null;
         this.element = element;
         if(!this.element)
-            alert("null element")
+            alert("null element in Swipe.js")
         else
             this.element.addEventListener('touchstart', function(evt) {
             this.xDown = evt.touches[0].clientX;
@@ -74,6 +74,10 @@ class Swipe {
     }
 }
 var swiper = new Swipe(document.getElementById("rec_box"));
-swiper.onRight(function() {showSlides(slideIndex += -1);});
-swiper.onLeft(function() {showSlides(slideIndex += +1);});
+swiper.onRight(function() {rec_box.plusSlides(-1);});
+swiper.onLeft(function() {rec_box.plusSlides( +1);});
 swiper.run();
+var swiper2 = new Swipe(document.getElementById("last_viewed"));
+swiper2.onRight(function() {last_viewed.plusSlides( -1);});
+swiper2.onLeft(function() {last_viewed.plusSlides( +1);});
+swiper2.run();

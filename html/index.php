@@ -6,7 +6,7 @@ $db->connect();
 $query = $db->query("Select * from items order by views desc");
 $i=0;
 $table=[];
-while(($row=mysqli_fetch_row($query))!=NULL && $i<50)
+while(($row=mysqli_fetch_row($query))!=NULL && $i<30)
 {$table[$i]=$row;
     $i++;
 }

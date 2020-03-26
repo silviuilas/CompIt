@@ -48,16 +48,3 @@ function load_prices_ajax(){
         }
     })
 }
-
-async function load_prices() {
-    let proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    const response = await fetch(_URL + "/API/api.php?name=" + document.getElementById('item_name').innerText);
-    fetch(_URL)
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            console.log(data);
-        });
-    document.getElementById('prices_list').innerHTML = "test";
-}
