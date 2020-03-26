@@ -1,6 +1,12 @@
 <?php
 
-
+$arrContextOptions=array(
+    "ssl"=>array(
+        "verify_peer"=>false,
+        "verify_peer_name"=>false,
+    )
+);
+$_SESSION['ssl']=$arrContextOptions;
 class CustomTemp
 {
     private $file_path;
@@ -37,7 +43,7 @@ class CustomTemp
     public function return_modified_file()
     {
         //echo implode(" ", $this->array);
-        $this->template = file_get_contents(_SITE_URL.'/'.$this->file_path);
+        $this->template = file_get_contents(_SITE_URL.'/'.$this->file_path,false,stream_context_create($_SESSION['ssl']));
         $this->make_array_key($this->array,'',0);
         return $this->template;
     }
