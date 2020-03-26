@@ -3,7 +3,7 @@ class ItemsSliderClass{
         this.items=items;
         this.locationId=locationId;
         this.slideIndex=1;
-        this.maxItems=20;
+        this.maxItems=items.length;
         this.maxRenderItems=Math.floor(document.getElementById(this.locationId).clientWidth/150);
         }
     plusSlides(n){
@@ -49,10 +49,13 @@ class ItemsSliderClass{
         text=text+"<a class='prev' onclick='"+this.locationId+".plusSlides(-1)'>&#10094;</a>";
         text=text+"<a class='next' onclick='"+this.locationId+".plusSlides(1)'>&#10095;</a>";
         text=text+"</div>";
+        if(this.maxItems===0){
+           $(document.getElementById(this.locationId)).hide();
+        }
         document.getElementById(this.locationId).innerHTML=text;
     }
 }
 let rec_box =new ItemsSliderClass(rec_items_array,"rec_box");
 rec_box.makeItems();
-let last_viewed= new ItemsSliderClass(rec_items_array,"last_viewed");
+let last_viewed= new ItemsSliderClass(last_items_viewed,"last_viewed");
 last_viewed.makeItems();

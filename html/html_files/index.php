@@ -5,8 +5,9 @@
                 <br>
                 <div class="item_upper_text">Produse Recomandate</div>
                 <div class="space"></div>
-                <div id="rec_box" class="rec_box">
+                <div id="rec_box">
                 </div>
+                <div class="item_upper_text">Ultimele Produse Vizionate</div>
                 <div id="last_viewed">
                 </div>
             </div>
@@ -28,7 +29,6 @@
             <p>My first paragraph.</p>center
             <p>My first paragraph.</p>center
         </div>
-        <script defer src="{URL}/JS/customJS.js"></script>
         <script defer src="{URL}/JS/Swipe.js"></script>
         <script defer src="{URL}/JS/ItemsSliderClass.js"></script>
 
