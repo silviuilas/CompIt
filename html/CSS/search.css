@@ -132,6 +132,7 @@ body {
 	margin-top:5%;
 	margin-right: 15%;
 	margin-left: 15%;
+	margin-bottom:5%;
 	text-align:center;
 	background-color:white;
 	border-style:ridge;
@@ -199,16 +200,12 @@ body {
 	color:white;
 }
 
-.footer{
+footer{
 	padding-top:0.5%;
 	padding-bottom:1%;
 	text-align:center;
 	background-color:gray;
 	color:white;
-	max-height:100%;
-	margin:0;
-	position: fixed;
-	bottom: 0;
 	width: 100%;
 
 }
