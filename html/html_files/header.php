@@ -24,8 +24,7 @@
                 </a>
                 <div class="dropcontent">
                     <a href="#">Categorii</a>
-                    <a href="{URL}/html_files/login.php">Login</a>
-                    <a href="{URL}/html_files/register.php">Sign Up</a>
+                    <a href="{URL}/html_files/login.php">Login/SignUp</a>
                     <a href="#">Your Opinion</a>
                 </div>
             </div>

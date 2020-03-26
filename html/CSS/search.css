@@ -115,22 +115,101 @@ body {
 }
 .main{
 	overflow: hidden;
-	padding-top:1%;
-	padding-bottom:1%;
+	padding-top:5%;
+	padding-bottom:10%;
+	margin-right: 15%;
+	margin-left: 15%;
+	background-color:white;
+	margin-bottom: 0.5%;
+	text-align:center;
+}
+.mainlr{
+
+
+	overflow: hidden;
+	padding-top:10%;
+	padding-bottom:10%;
+	margin-top:5%;
 	margin-right: 15%;
 	margin-left: 15%;
 	text-align:center;
 	background-color:white;
+	border-style:ridge;
+	border-radius: 10px;
+
+
+
+}
+.loginregister {
+
+	width: 49.5%;
+	float:left;
+	border-right: 1px solid #bbb;
+
+
+
+}
+.loginregister:last-child{
+	border-right: none;
+}
+.loginregister h1{}
+
+.loginregister input[type=text] {
+	margin-bottom:2%;
+	padding-left:3%;
+	border-style:ridge;
+	border-color:gray;
+	border-radius: 10px;
+	font-size: 20px;
+
+
+}
+.loginregister input[type=password] {
+	margin-bottom:2%;
+	padding-left:3%;
+	border-style:ridge;
+	border-color:gray;
+	border-radius: 10px;
+	font-size: 20px;
+}
+
+.loginregister input[type=email] {
+	margin-bottom:2%;
+	padding-left:3%;
+	border-style:ridge;
+	border-color:gray;
+	border-radius: 10px;
+	font-size: 20px;
+
+}
+
+.loginregister input[type=submit] {
+	margin-bottom:15%;
+
+	padding-left:7%;
+	padding-right:7%;
+	border-style:ridge;
+	border-color:gray;
+	border-radius: 20px;
+	font-size: 20px;
+}
+.loginregister input:hover[type=submit] {
+
+	background-color:#3b3b3b;
+	color:white;
 }
 
 .footer{
-	padding-top:1%;
+	padding-top:0.5%;
 	padding-bottom:1%;
 	text-align:center;
 	background-color:gray;
 	color:white;
 	max-height:100%;
 	margin:0;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 
 }
 .navbar img
@@ -216,6 +295,33 @@ body {
 		margin-left:5%;
 		margin-right: 5%;
 	}
+
+	.mainlr{
+
+
+
+
+
+	}
+
+
+	.loginregister {
+
+		margin-right: 15%;
+		margin-left: 25%;
+		position: relative;
+		width:49.5%;
+		clear:left;
+		height:100%;
+		border-bottom: 1px solid #bbb;
+		border-right: none;
+
+	}
+	.loginregister:last-child{
+		border-bottom: none;
+
+	}
+
 }
 @media only screen and (max-width:500px)
 {
@@ -250,6 +356,21 @@ body {
 		margin-top: 35px;
 		margin-left:0%;
 		margin-right: 0%;
+	}
+
+	.loginregister {
+
+		position: relative;
+		width:49.5%;
+		margin-right: 15%;
+		margin-left: 15%;
+		clear:left;
+		border-bottom: 1px solid #bbb;
+		border-right: none;
+
+	}
+	.loginregister:last-child{
+		border-bottom: none;
 	}
 }
 

@@ -35,20 +35,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <?php $_SESSION['header']->show_file_modified() ?>
-    <div class="main">
+    <div class="mainlr">
         <form method="post">
             <br>
             <div>
-                <label for="usrname">Nume</label>
-                <input type="text" id="usrname" name="usrname" required>
+                <label for="usrname"></label>
+                <input type="text" id="usrname" name="usrname" placeholder="Username" required>
             </div>
             <div>
-                <label for="paswd">Password</label>
-                <input type="password" id="paswd" name="paswd" pattern="(?=.*\d)(?=.*[a-z]).{8,}" title="Trebuie sa contina cel putin un numar si sa aiba cel putin 8 cifre" required>
+                <label for="paswd"></label>
+                <input type="password" id="paswd" name="paswd" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z]).{8,}" title="Trebuie sa contina cel putin un numar si sa aiba cel putin 8 cifre" required>
             </div>
             <div>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email">
+                <label for="email"></label>
+                <input type="email" id="email" name="email" placeholder="Email">
             </div>
             <div>
                 <input type="submit" value="Submit">
