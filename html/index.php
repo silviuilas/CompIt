@@ -21,7 +21,7 @@ $index->show_file_modified();
 ?>
 <script> var rec_items_array= <?php echo $rec_js_array;?>;
         var last_items_viewed=[];
-        last_items_viewed=<?php echo (json_encode($_SESSION['last_viewed_items']));?>;
+        last_items_viewed=<?php echo (json_encode(array_reverse($_SESSION['last_viewed_items'])));?>;
 </script>
 <?php
 $_SESSION['footer']->show_file_modified();
