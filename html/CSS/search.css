@@ -103,17 +103,6 @@
 	padding-right: 3%;
 	font-size:25px;
 }
-.main{
-	overflow: hidden;
-	padding-top:5%;
-	padding-bottom:10%;
-	margin-right: 15%;
-	margin-left: 15%;
-	background-color:white;
-	margin-bottom: 0.5%;
-	text-align:center;
-}
-
 .navbar img
 {
 	top:5px;
@@ -182,10 +171,6 @@
 	.navbar a{
 		font-size: 25px;
 	}
-	.main{
-		margin-left:5%;
-		margin-right: 5%;
-	}
 }
 @media only screen and (max-width:500px)
 {
@@ -210,11 +195,6 @@
 	}
 	.navbar a{
 		font-size: 20px;
-	}
-	.main{
-		margin-top: 35px;
-		margin-left:0%;
-		margin-right: 0%;
 	}
 }
 
