@@ -48,8 +48,6 @@
 .logo{
 	display:inline-block;
 }
-.dropbtn{
-}
 .dropdown
 {
 	position:relative;
@@ -64,7 +62,6 @@
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index:1;
-
 }
 .dropcontent a{
 	color: white;
@@ -85,14 +82,7 @@
 .dropdown:hover .dropbtn {
 	background-color: gray;
 }
-body {
-	width:100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	background-color:#d1d0cf;
 
-}
 .oferte{
 	transform: translate(0px,-22px);
 	list-style-type: none;
@@ -123,92 +113,7 @@ body {
 	margin-bottom: 0.5%;
 	text-align:center;
 }
-.mainlr{
 
-
-	overflow: hidden;
-	padding-top:10%;
-	padding-bottom:10%;
-	margin-top:5%;
-	margin-right: 15%;
-	margin-left: 15%;
-	margin-bottom:5%;
-	text-align:center;
-	background-color:white;
-	border-style:ridge;
-	border-radius: 10px;
-
-
-
-}
-.loginregister {
-
-	width: 49.5%;
-	float:left;
-	border-right: 1px solid #bbb;
-
-
-
-}
-.loginregister:last-child{
-	border-right: none;
-}
-.loginregister h1{}
-
-.loginregister input[type=text] {
-	margin-bottom:2%;
-	padding-left:3%;
-	border-style:ridge;
-	border-color:gray;
-	border-radius: 10px;
-	font-size: 20px;
-
-
-}
-.loginregister input[type=password] {
-	margin-bottom:2%;
-	padding-left:3%;
-	border-style:ridge;
-	border-color:gray;
-	border-radius: 10px;
-	font-size: 20px;
-}
-
-.loginregister input[type=email] {
-	margin-bottom:2%;
-	padding-left:3%;
-	border-style:ridge;
-	border-color:gray;
-	border-radius: 10px;
-	font-size: 20px;
-
-}
-
-.loginregister input[type=submit] {
-	margin-bottom:15%;
-
-	padding-left:7%;
-	padding-right:7%;
-	border-style:ridge;
-	border-color:gray;
-	border-radius: 20px;
-	font-size: 20px;
-}
-.loginregister input:hover[type=submit] {
-
-	background-color:#3b3b3b;
-	color:white;
-}
-
-footer{
-	padding-top:0.5%;
-	padding-bottom:1%;
-	text-align:center;
-	background-color:gray;
-	color:white;
-	width: 100%;
-
-}
 .navbar img
 {
 	top:5px;
@@ -254,20 +159,9 @@ footer{
 	float:left;
 }
 
-@media only screen and (min-width: 1000px) {
-	.hidden_l {
-		display: none;
-		width: 0;
-		height: 0;
-	}
-}
+
 @media only screen and (max-width:1000px) and (min-width: 500px)
 {
-	.hidden_m{
-		display: none;
-		width: 0;
-		height: 0;
-	}
 	.nav_wrapper{
 		margin-left: 5%;
 		margin-right: 5%;
@@ -292,33 +186,6 @@ footer{
 		margin-left:5%;
 		margin-right: 5%;
 	}
-
-	.mainlr{
-
-
-
-
-
-	}
-
-
-	.loginregister {
-
-		margin-right: 15%;
-		margin-left: 25%;
-		position: relative;
-		width:49.5%;
-		clear:left;
-		height:100%;
-		border-bottom: 1px solid #bbb;
-		border-right: none;
-
-	}
-	.loginregister:last-child{
-		border-bottom: none;
-
-	}
-
 }
 @media only screen and (max-width:500px)
 {
@@ -329,11 +196,6 @@ footer{
 	.nav_wrapper{
 		margin-left: 2%;
 		margin-right: 2%;
-	}
-	.hidden_s{
-		display: none;
-		width: 0;
-		height: 0;
 	}
 	.nav_wrapper .logo_wrap{
 		float:left;
@@ -353,21 +215,6 @@ footer{
 		margin-top: 35px;
 		margin-left:0%;
 		margin-right: 0%;
-	}
-
-	.loginregister {
-
-		position: relative;
-		width:49.5%;
-		margin-right: 15%;
-		margin-left: 15%;
-		clear:left;
-		border-bottom: 1px solid #bbb;
-		border-right: none;
-
-	}
-	.loginregister:last-child{
-		border-bottom: none;
 	}
 }
 

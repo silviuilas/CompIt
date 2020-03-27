@@ -1,0 +1,52 @@
+.loginregister {
+    width: 49.5%;
+    float:left;
+    border-right: 1px solid #bbb;
+}
+.loginregister:last-child{
+    border-right: none;
+}
+
+.loginregister input[type=text],input[type=password],input[type=email] {
+    margin-bottom:2%;
+    padding-left:3%;
+    border-style:ridge;
+    border-color:gray;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.loginregister input[type=submit] {
+    margin-bottom:15%;
+    padding-left:7%;
+    padding-right:7%;
+    border-style:ridge;
+    border-color:gray;
+    border-radius: 20px;
+    font-size: 20px;
+}
+.loginregister input:hover[type=submit] {
+    background-color:#3b3b3b;
+    color:white;
+}
+
+@media only screen and (max-width:1000px) and (min-width: 500px) {
+    .loginregister {
+        width: 100%;
+        border-bottom: 1px solid #bbb;
+        border-right: none;
+    }
+    .loginregister:last-child{
+        border-bottom: none;
+    }
+}
+@media only screen and (max-width:500px){
+    .loginregister {
+        width: 100%;
+        border-bottom: 1px solid #bbb;
+        border-right: none;
+    }
+    .loginregister:last-child{
+        border-bottom: none;
+    }
+}

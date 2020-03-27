@@ -6,12 +6,9 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    //TO DO MAKE IT SECURE FOR HTML INJECTIONS
+    //TODO MAKE IT SECURE FOR HTML INJECTIONS
     require_once('../PHP/Database.php');
-
-
-    if($_POST['submit']="Login")
-    {
+    if($_POST["type"]=="Register") {
         if (isset($_POST["usrname"])==NULL or isset($_POST["paswd"])==NULL)
         {
         echo "Username sau password bug";
@@ -34,10 +31,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     $db->query("INSERT INTO users_info (username,password,email) VALUES ('$name','$pass','$email')");
     }
-    else
-    {
-        if (isset($_POST["usrname"])==NULL or isset($_POST["paswd"])==NULL)
-        {
+    else {
+        if (isset($_POST["usrname"])==NULL or isset($_POST["paswd"])==NULL) {
             echo "Username sau password bug";
             die();
         }
@@ -61,7 +56,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <?php $_SESSION['header']->show_file_modified()?>
-    <div class="mainlr">
+    <div class="main">
         <div class="loginregister">
             <h1>Login</h1>
             <form method="post">
@@ -75,8 +70,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="password" id="paswd" name="paswd" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z]).{8,}"  title="Trebuie sa contina cel putin un numar si sa aiba cel putin 8 cifre" required >
                 </div>
                 <div>
-                    <input type="submit" id="type" value="Login">
-
+                    <input type="submit" id="type" name="type" value="Submit">
                 </div>
             </form>
         </div>
@@ -97,12 +91,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="email" id="email" name="email" placeholder="Email">
                 </div>
                 <div>
-                    <input type="submit" id="type" value="Sign up">
-
+                    <input type="submit" id="type" name="type" value="Sign Up">
                 </div>
             </form>
         </div>
-
     </div>
 
 <?php $_SESSION['footer']->show_file_modified() ?>
