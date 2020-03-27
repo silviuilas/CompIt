@@ -3,3 +3,7 @@ html/configure/config.php
 html/configure/access.php
 /html/Python/Scraper/.idea/
 /.idea/
+html/.idea/vcs.xml
+html/.idea/modules.xml
+html/.idea/misc.xml
+html/.idea/html.iml
