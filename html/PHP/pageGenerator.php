@@ -15,7 +15,6 @@ $db = new Database();
 $db->connect();
 $query = $db->query("Select * from items where name ='".$name."'");
 $row=mysqli_fetch_row($query);
-//TODO make the items unique
 push_last_viewed_item($row);
 $subcategory=$row[1];
 $query = $db->query("Select * from subcategory as sub join category as cat on sub.id_category=cat.id where sub.id='".$subcategory."'");
