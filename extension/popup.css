@@ -6,15 +6,22 @@
         transform: rotate(360deg);
     }
 }
-#taci {
-    position:relative;
-    float:left;
-    text-align: center;
+#prices_list{
+}
+.in_item{
     width: 100%;
-    animation-name:            rotate;
-    animation-duration:        1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    height: 30px;
+    display:flex;
+    justify-content: space-between;
+}
+.in_item_shopname{
+    line-height: 30px;
+}
+.in_item_shopimg_box{
+    line-height: 30px;
+}
+.in_item_price{
+    line-height: 30px;
 }
 .checkPageWrapper{
     position:fixed;
@@ -25,7 +32,9 @@
 }
 
 #checkPage{
-
+    padding: 6px;
+    border-radius: 20px;
+    margin-bottom: 20px;
 }
 .main{
     width: 400px;

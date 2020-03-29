@@ -2,9 +2,27 @@
 header("Content-Type:application/json");
 require "data.php";
 
+
 if(!empty($_GET['name']))
-{
     $name=$_GET['name'];
+if(!empty($_GET['uri'])) {
+    $uri = $_GET['uri'];
+    $db = new Database();
+    $db->connect();
+    $query = $db->query("Select id_items from items_links where link ='".$uri."'");
+    if(mysqli_num_rows($query)){
+        $row=mysqli_fetch_row($query);
+        $query = $db->query("Select name from items where id =".$row[0]);
+        $row=mysqli_fetch_row($query);
+        $name = $row[0];
+    }
+    else{
+        $name="";
+    }
+}
+
+if($name)
+{
     if(!empty($_GET['filters']))
         $filters=$_GET['filters'];
     else
