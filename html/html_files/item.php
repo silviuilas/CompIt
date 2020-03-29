@@ -10,6 +10,7 @@ $_SESSION['header']->show_file_modified()?>
             <h2 id="item_name">{name}</h2>
             <h3>{categori}</h3>
             <h3 id="minprice">De la {minprice} RON</h3>
+            <div id="stars"></div>
         </div>
     </div>
    <div id="prices_list">

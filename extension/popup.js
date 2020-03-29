@@ -25,7 +25,7 @@ function showItems(data_array){
     if(data_array!=null) {
         function showElement(item) {
             document.getElementById('prices_list').innerHTML +=
-                "<a href='"+item['link']+"'>"+
+                "<a href='"+item['link']+"'  target=\"_blank\">"+
                     "<div class='in_item'>" +
                         "<div class='in_item_shopimg_box'>" +
                             "<img class='in_item_shopimg_img'src='" + item['shopimg'] + "'>" +
