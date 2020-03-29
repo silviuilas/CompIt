@@ -8,10 +8,16 @@
     <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-    <div class="main">
-        <div id="prices_list"></div>
-        <div class="checkPageWrapper">
-            <button id="checkPage">Vezi produsul in pagina aici!</button>
+    <div class="main" id="main" >
+        <div id="wrapper" style="display:none">
+            <div class="multiplexor">
+                <h2 id="view_prices_vendors" >Prices</h2>
+                <h2 id="view_prices_history" onclick="">History</h2>
+            </div>
+            <div id="prices_list"></div>
+            <div class="checkPageWrapper">
+                <button id="checkPage">Vezi produsul in pagina aici!</button>
+            </div>
         </div>
     </div>
 </body>

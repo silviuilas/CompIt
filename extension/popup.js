@@ -1,6 +1,9 @@
 var _URL = "https://compit.dev";
+var _Loaded_Vendors=null;
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('checkPage').addEventListener('click',changePage,false);
+    document.getElementById('view_prices_vendors').addEventListener('click',showItems,false);
+    document.getElementById('view_prices_history').addEventListener('click',null,false);
     function make_request() {
         chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
                 let url = customEncode(tabs[0].url);
@@ -13,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     contentType: "application/json",
                     dataType: 'json',
                     success: function (result) {
+                        document.getElementById("wrapper").style.display="inline-block"
                         showItems(result.data);
                     }
                 })
@@ -22,7 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
     },false);
 
 function showItems(data_array){
+    if(_Loaded_Vendors!=null)
+        data_array=_Loaded_Vendors;
     if(data_array!=null) {
+        _Loaded_Vendors=data_array;
         function showElement(item) {
             document.getElementById('prices_list').innerHTML +=
                 "<a href='"+item['link']+"'  target=\"_blank\">"+
@@ -41,7 +48,7 @@ function showItems(data_array){
                 "<div class='space'></div>";
         }
 
-        document.getElementById('prices_list').innerHTML += "<div class='in_items_wrapper'>";
+        document.getElementById('prices_list').innerHTML = "<div class='in_items_wrapper'>";
         data_array['items'].forEach(showElement);
         document.getElementById('prices_list').innerHTML += '</div>';
         let x = document.getElementsByClassName('in_item');
@@ -54,6 +61,7 @@ function showItems(data_array){
         }
     }
 }
+
 
 function changePage(){
     chrome.tabs.create({"url": _URL});
