@@ -1,9 +1,11 @@
 var _URL = "https://compit.dev";
 var _Loaded_Vendors=null;
+var _Curr_path;
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('checkPage').addEventListener('click',changePage,false);
+    document.getElementById('checkMainPage').addEventListener('click',changePage,false);
     document.getElementById('view_prices_vendors').addEventListener('click',showItems,false);
-    document.getElementById('view_prices_history').addEventListener('click',null,false);
+    document.getElementById('view_prices_history').addEventListener('click',showImg,false);
     function make_request() {
         chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
                 let url = customEncode(tabs[0].url);
@@ -18,6 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     success: function (result) {
                         document.getElementById("wrapper").style.display="inline-block"
                         showItems(result.data);
+                    },
+                    error: function(){
+                        showNothing();
                     }
                 })
         });
@@ -25,7 +30,16 @@ document.addEventListener('DOMContentLoaded', function() {
     make_request();
     },false);
 
+function showNothing(){
+    document.getElementById('error_case').style.display="flex";
+}
+function showImg(){
+        document.getElementById('history_svg').style.display="";
+        document.getElementById('prices_list').style.display="none";
+}
 function showItems(data_array){
+    document.getElementById('history_svg').style.display="none";
+    document.getElementById('prices_list').style.display="";
     if(_Loaded_Vendors!=null)
         data_array=_Loaded_Vendors;
     if(data_array!=null) {
@@ -50,6 +64,7 @@ function showItems(data_array){
 
         document.getElementById('prices_list').innerHTML = "<div class='in_items_wrapper'>";
         data_array['items'].forEach(showElement);
+        _Curr_path="/PHP/pageGenerator.php?name="+data_array['name'];
         document.getElementById('prices_list').innerHTML += '</div>';
         let x = document.getElementsByClassName('in_item');
         let i;
@@ -64,7 +79,10 @@ function showItems(data_array){
 
 
 function changePage(){
-    chrome.tabs.create({"url": _URL});
+    if(_Curr_path)
+        chrome.tabs.create({"url": _URL+_Curr_path});
+    else
+        chrome.tabs.create({"url": _URL});
 }
 function customEncode(str){
     str = str.split("&").join("%26").split("+").join("%2B").split(" ").join("%20");

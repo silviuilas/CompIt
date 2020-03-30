@@ -11,12 +11,19 @@
     <div class="main" id="main" >
         <div id="wrapper" style="display:none">
             <div class="multiplexor">
-                <h2 id="view_prices_vendors" >Prices</h2>
-                <h2 id="view_prices_history" onclick="">History</h2>
+                <h2 id="view_prices_vendors" >Pret</h2>
+                <h2 id="view_prices_history" >Istoric</h2>
             </div>
             <div id="prices_list"></div>
+            <div id="history_svg"> <img src="Screenshot%20from%202020-03-30%2009-49-34.png" style="width: 100%;"></div>
             <div class="checkPageWrapper">
                 <button id="checkPage">Vezi produsul in pagina aici!</button>
+            </div>
+        </div>
+        <div id="error_case" style="display:none">
+            <h2>Nu am gasit niciun produs</h2>
+            <div class="checkPageWrapper">
+                <button id="checkMainPage">Poti cauta mai multe produse aici!</button>
             </div>
         </div>
     </div>

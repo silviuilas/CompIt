@@ -10,6 +10,12 @@
     width: 100%;
     height: 100%;
 }
+#error_case h2{
+    width: 100%;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+}
 #prices_list{
 }
 .in_item{
@@ -17,6 +23,10 @@
     height: 30px;
     display:flex;
     justify-content: space-between;
+}
+#wrapper a{
+    text-decoration: none !important;
+    color:black;
 }
 .in_item_shopname{
     line-height: 30px;
@@ -35,7 +45,7 @@
     bottom:0;
 }
 
-#checkPage{
+#checkPage,#checkMainPage{
     padding: 6px;
     border-radius: 20px;
     margin-bottom: 20px;
@@ -57,4 +67,5 @@
     padding: 10px 20px;
     border-radius: 10px;
     background: lightgray;
+    line-height: 15px;
 }
