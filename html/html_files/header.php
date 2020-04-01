@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{URL}/CSS/search_page.css">
     <link rel="stylesheet" href="{URL}/CSS/item_slider.css">
     <link rel="stylesheet" href="{URL}/CSS/loginregister.css">
+    <link rel="stylesheet" href="{URL}/CSS/favorite_page.css">
     <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/money-and-finance/512/find-512.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>COMP IT</title>
@@ -38,7 +39,7 @@
                 <input type="text" name="search" placeholder="Search...">
             </form>
             <div class="fav_warp">
-                <a href="#" id="fav">Favorite</a>
+                <a href="{URL}/PHP/favorite.php" id="fav">Favorite</a>
             </div>
             <div class="name_wrap hidden_m hidden_s">
                 <a href="{URL}/html_files/loginregister.php" id="name">

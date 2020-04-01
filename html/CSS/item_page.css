@@ -4,15 +4,22 @@
     justify-content:space-around;
     outline: darkgray solid 3px;
 }
+.information_container .favButton {
+    font-size: 25px;
+    color:red;
+}
 .img_item_container{
     overflow:hidden;
     outline:1px solid #d1d0cf;
-    width: 200px;
+    width: 220px;
     height: 220px;
+    line-height: 220px;
+    margin: 0 0;
 }
 .img_item_container #img_style{
-    max-width: 100%;
-    height: 220px;
+    max-width: 220px;
+    max-height: 220px;
+    vertical-align: middle;
 }
 .in_item {
     margin-top:5px;
