@@ -23,7 +23,7 @@ function fav_ajax(){
     let set=fav_toggle();
     $.post(_URL + "/API/ajax_functions.php",
             {product_name: prd_name, set: set, fct_name: "favorite_system"},
-            function (result) {alert(result.result)}
+            function (result) {}
             );
 }
 
