@@ -8,11 +8,11 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 if(!isset($_SESSION['header'])) {
-    $header = new CustomTemp('html_files/header.php', array('URL' => _SITE_URL, 'NAME' => "Oaspete"));
+    $header = new CustomTemp('html_files/header.html', array('URL' => _SITE_URL, 'NAME' => "Oaspete"));
     $_SESSION['header'] = $header;
 }
 
 if(!isset($_SESSION['footer'])) {
-    $footer = new CustomTemp('html_files/footer.php', array('URL' => _SITE_URL));
+    $footer = new CustomTemp('html_files/footer.html', array('URL' => _SITE_URL));
     $_SESSION['footer']=$footer;
 }
