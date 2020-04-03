@@ -35,7 +35,7 @@ class CustomTemp
     public function return_modified_file()
     {
         //echo implode(" ", $this->array);
-        $this->template = file_get_contents(_SITE_URL.'/'.$this->file_path,false,stream_context_create($_SESSION['ssl']));
+        $this->template = file_get_contents(_FULL_PATH.'/'.$this->file_path,false,stream_context_create($_SESSION['ssl']));
         $this->make_array_key($this->array,'',0);
         return $this->template;
     }
