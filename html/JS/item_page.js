@@ -1,6 +1,5 @@
 
-$(function() {
-    //load_prices();
+_(function() {
     load_prices_ajax();
     make_stars();
 });
@@ -21,10 +20,10 @@ function fav_toggle(){
 function fav_ajax(){
     let prd_name=document.getElementById("item_name").innerHTML;
     let set=fav_toggle();
-    $.post(_URL + "/API/ajax_functions.php",
-            {product_name: prd_name, set: set, fct_name: "favorite_system"},
-            function (result) {}
-            );
+    _().post(_URL + "/API/ajax_functions.php",
+        {product_name: prd_name, set: set, fct_name: "favorite_system"},
+        function (result) {}
+    );
 }
 
 function make_stars() {
@@ -38,7 +37,7 @@ function rate_stars(star){
     let x=document.getElementsByClassName("fa fa-star");
     let prd_name=document.getElementById("item_name").innerHTML;
     if(!(x[0].style.color==="orange")) {
-        $.post(_URL + "/API/ajax_functions.php",
+        _().post(_URL + "/API/ajax_functions.php",
             {product_name: prd_name, rating: star, fct_name: "rate_system"},
             function (result) {
                 for (let i = 0; i <= star; i++)
@@ -83,7 +82,7 @@ function load_prices_ajax(){
     }
 
     let _current_url = _URL + "/API/api.php?name=" + document.getElementById('item_name').innerText;
-    $.ajax({
+    _().ajax({
         url: _current_url,
         contentType: "application/json",
         dataType: 'json',

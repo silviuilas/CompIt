@@ -50,7 +50,7 @@ class ItemsSliderClass{
         text=text+"<a class='next' onclick='"+this.locationId+".plusSlides(1)'>&#10095;</a>";
         text=text+"</div>";
         if(this.maxItems===0){
-           $(document.getElementById(this.locationId)).hide();
+           _(document.getElementById(this.locationId)).hide();
         }
         document.getElementById(this.locationId).innerHTML=text;
     }

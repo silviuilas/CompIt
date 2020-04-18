@@ -3,8 +3,8 @@ var offset=0;
 var search_items_array=[];
 var fadeInAnimationComplete=0;
 
-$(window).scroll(function() {
-    if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+_(window).scroll(function() {
+    if(window.scrollY +  window.outerHeight >  window.outerHeight - 100) {
         load_search_items();
     }
 });
@@ -14,7 +14,7 @@ function load_search_items(){
     if(fadeInAnimationComplete===0) {
         fadeInAnimationComplete=1;
         let _current_url = _URL + "/API/search_api.php?search=" + name + "&offset=" + offset * 25;
-        $.ajax({
+        _().ajax({
             url: _current_url,
             contentType: "application/json",
             dataType: 'json',
@@ -50,12 +50,12 @@ function search_items(off) {
     document.getElementById("search_box").innerHTML += text;
     let x = document.getElementById("search_box").getElementsByClassName("item_slide");
     for (i = off*25; i < search_items_array.length-1; i++) {
-        $(x[i]).hide().fadeIn(1000);
+        _(x[i]).fadeIn(40);
     }
-    $(x[24]).hide().fadeIn(1000,function(){
+    _(x[24]).fadeIn(40,function(){
         //When all the animations are over
         fadeInAnimationComplete=0;
-        if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+        if(window.scrollY + window.outerHeight > window.outerHeight-100) {
         load_search_items();
     }});
 }

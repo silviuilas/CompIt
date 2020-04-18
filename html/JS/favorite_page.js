@@ -1,10 +1,10 @@
 let offset=0;
 let fadeInAnimationComplete=0;
 
-$(window).scroll(function() {
-    if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-        offset++;
+_(window).scroll(function() {
+    if(window.scrollY +  window.outerHeight >  window.outerHeight - 100) {
         load_favorites();
+        offset++;
     }
 });
 

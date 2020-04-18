@@ -16,11 +16,11 @@ function createCookie(name, value, days) {
 }
 
 if (!getCookie("cookie-popup")) {
-    $('.cookie-banner').delay(2000).fadeIn();
+    _('.cookie-banner').fadeIn();
 }
-$("#cookie-accept-btn").click(function() {
+_("#cookie-accept-btn").click(function() {
     createCookie("cookie-popup","accepted",30);
-    $('.cookie-banner').fadeOut();
+    _('.cookie-banner').fadeOut();
 });
 
 
