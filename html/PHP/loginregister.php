@@ -45,6 +45,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($row[1] == $_POST['usrname'])
                 if ($row[2] == $_POST['paswd']) {
                     $_SESSION['header']->update_array(array('NAME'=>$_POST['usrname']));
+                    $_SESSION['header']->update_array(array('NOTLOGGED'=>"display:none"));
+                    $_SESSION['header']->update_array(array('LOGGED'=>""));
                     $_SESSION['username']=$_POST['usrname'];
                     $_SESSION['userId']=$row[0];
                     header('Location: '._SITE_URL);
