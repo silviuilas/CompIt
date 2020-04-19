@@ -1,6 +1,9 @@
 
 html/configure/config.php
 html/configure/access.php
+html/admin/configure/configAdmin.php
+html/admin/configure/accessAdmin.php
+
 /html/Python/Scraper/.idea/
 /.idea/
 html/.idea/vcs.xml

@@ -1,0 +1,45 @@
+.header-panel{
+    display:flex;
+    justify-content: space-between;
+    background: var(--admin-headbar);
+    height: 50px;
+    width: calc(100% - 100px);
+    line-height: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.side-panel{
+    width: 250px;
+    height: 100%;
+    float:left;
+    background: var(--admin-sidebar);
+}
+#slide-burger-header{
+    display: none;
+}
+#slide-burger-header i{
+    font-size:20px;
+}
+#slide-burger{
+    display: flex;
+    justify-content: center;
+}
+#slide-burger i{
+    font-size:30px;
+}
+@media only screen and (max-width:1000px) and (min-width: 0px) {
+    .header-panel{
+        padding: 0 20px;
+        width: calc(100% - 40px);
+    }
+    #slide-burger-header{
+        display: block;
+    }
+    #slide-burger{
+        display: none;
+    }
+    .side-panel{
+        width: 100%;
+        height: 0px;
+    }
+}

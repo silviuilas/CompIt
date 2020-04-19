@@ -8,7 +8,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 if(!isset($_SESSION['header'])) {
-    $header = new CustomTemp('html_files/header.html', array('URL' => _SITE_URL, 'NAME' => "Oaspete"));
+    $header = new CustomTemp('html_files/header.html', array('URL' => _SITE_URL, 'NAME' => "Oaspete",'NOTLOGGED'=>"",'LOGGED'=>"display:none;"));
     $_SESSION['header'] = $header;
 }
 

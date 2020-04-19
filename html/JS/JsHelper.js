@@ -90,6 +90,51 @@ customLib.prototype.fadeIn = function(timeOut,callback) {
     })
     return this;
 };
+customLib.prototype.slide=function(direction,goal,timeOut,smooth,callback){
+    callback=callback || function(){};
+    smooth=smooth||40;
+    timeOut=timeOut||200;
+    timeOut=timeOut/smooth;
+    this.each(function (item) {
+        let pace,sum;
+        if(direction==="width") {
+            if(goal==null)
+                goal=item.scrollWidth;
+            pace = (item.offsetWidth - goal) / smooth;
+            sum = item.offsetWidth;
+        }
+        else if(direction==="height")
+        {
+            if(goal==null)
+                goal=item.scrollHeight;
+            pace=(item.offsetHeight-goal)/smooth;
+            sum=item.offsetHeight;
+        }
+        (function recSlide(){
+            if(smooth<=0) {
+                if(direction==="width")
+                    item.style.width=goal;
+                else if(direction==="height")
+                    item.style.height=goal;
+                callback();
+                return;
+            }
+            smooth--;
+            sum=sum-pace;
+            if(direction==="width")
+                item.style.width=sum+'px';
+            else if(direction==="height")
+                item.style.height = sum + 'px';
+            setTimeout(recSlide,timeOut);
+        })();
+    })
+}
+customLib.prototype.slideWidth = function(goal,timeOut,smooth,callback) {
+    return this.slide("width",goal,timeOut,smooth,callback);
+};
+customLib.prototype.slideHeight = function(goal,timeOut,smooth,callback) {
+    return this.slide("height",goal,timeOut,smooth,callback);
+};
 customLib.prototype.hide = function() {
     this.each(function (item) {
         let aux = item.style;

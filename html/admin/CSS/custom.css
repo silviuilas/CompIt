@@ -1,0 +1,22 @@
+:root{
+    --admin-sidebar:#fc9d03;
+    --admin-main:white;
+    --admin-headbar:#3b3b3b;
+}
+body{
+    margin: 0;
+}
+.main{
+    height: 1000px;
+}
+.main-panel{
+    width: calc(100% - 250px);
+    height: 100%;
+    background: var(--admin-main);
+    float:left;
+}
+@media only screen and (max-width:1000px) and (min-width: 0px) {
+    .main-panel{
+        width: 100%;
+    }
+}
