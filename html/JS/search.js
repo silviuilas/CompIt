@@ -4,7 +4,7 @@ var search_items_array=[];
 var fadeInAnimationComplete=0;
 
 _(window).scroll(function() {
-    if(window.scrollY +  window.outerHeight >  window.outerHeight - 100) {
+    if(window.scrollY +  window.outerHeight >  document.body.offsetHeight - 100) {
         load_search_items();
     }
 });
@@ -33,7 +33,7 @@ function search_items(off) {
     let i;
 
     for (i = off*25; i < search_items_array.length; i++) {
-        var name = search_items_array[i][2];
+        let name = search_items_array[i][2];
         if (name.length > 40)
             name = name.slice(0, 38) + "...";
         text = text + "<a href='"+_URL+"/PHP/pageGenerator.php?name="+search_items_array[i][2]+"'>"+
@@ -55,7 +55,7 @@ function search_items(off) {
     _(x[24]).fadeIn(40,function(){
         //When all the animations are over
         fadeInAnimationComplete=0;
-        if(window.scrollY + window.outerHeight > window.outerHeight-100) {
+        if(window.scrollY + window.outerHeight > document.body.offsetHeight-100) {
         load_search_items();
     }});
 }

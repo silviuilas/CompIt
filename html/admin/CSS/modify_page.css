@@ -1,0 +1,95 @@
+.modify-main-wrap{
+    margin:20px;
+}
+.modify-main{
+    text-align: center;
+}
+.modify-search{
+    width: 500px;
+    height: 30px;
+    line-height: 30px;
+    padding: 3px;
+    border-radius: 10px;
+    font-size: 18px;
+    box-shadow: black 2px 2px 10px;
+}
+.search-wrap{
+    display: flex;
+    justify-content: center;
+}
+.modify-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.rec-add-item-wrap{
+    border:1px solid black;
+    border-radius: 15px;
+    margin: 10px;
+    overflow: hidden;
+}
+.rec-add-item{
+    width: 400px;
+    height: 100px;
+}
+.rec-add-img-wrap{
+    width: 100px;
+    height: 100px;
+    float:left;
+    display: flex;
+    justify-content: center;
+    border-right: 1px solid black;
+}
+.rec-add-img{
+    max-height: 100px;
+    max-width: 80px;
+    display:inline;
+}
+.rec-add-name-price-wrap{
+    height: 100px;
+    float: left;
+    text-align: center;
+    width: 299px;
+}
+.rec-add-name{
+    float: left;
+    width: 100%;
+    line-height: 33px;
+    max-height: 33px;
+    overflow: hidden;
+}
+.rec-add-price{
+    float:left;
+    width: 100%;
+    line-height: 33px;
+}
+#rec-remove-pop{
+    position: fixed;
+    overflow: hidden;
+    height: 200px;
+    width: 400px;
+    background: lightgray;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+    display: none;
+}
+.rec-item-stats{
+    float:left;
+    width: 400px;
+    height: 100px;
+}
+.order-buttons{
+    background: cornflowerblue;
+    padding:10px 20px;
+    margin:30px
+}
+@media only screen and (max-width:1000px) and (min-width: 0px) {
+    .rec-add-item{
+        width: 300px;
+    }
+    .rec-add-name-price-wrap{
+        width: 199px;
+    }
+}

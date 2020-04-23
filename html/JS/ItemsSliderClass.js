@@ -55,6 +55,8 @@ class ItemsSliderClass{
         document.getElementById(this.locationId).innerHTML=text;
     }
 }
+let admin_rec_box =new ItemsSliderClass(admin_rec_items_array,"admin_rec_box");
+admin_rec_box.makeItems();
 let rec_box =new ItemsSliderClass(rec_items_array,"rec_box");
 rec_box.makeItems();
 let last_viewed= new ItemsSliderClass(last_items_viewed,"last_viewed");

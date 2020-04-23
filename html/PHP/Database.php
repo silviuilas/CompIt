@@ -65,6 +65,16 @@ class Database
         return $rows;
     }
 
+    public function queryArray($interrogation,$limit){
+        $query = $this->query($interrogation);
+        $i=0;
+        $table=[];
+        while(($row=mysqli_fetch_row($query))!=NULL && $i<$limit) {
+            $table[$i]=$row;
+            $i++;
+        }
+        return $table;
+    }
     /**
      * @return mixed
      */

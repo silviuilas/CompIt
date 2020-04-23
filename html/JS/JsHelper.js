@@ -69,17 +69,19 @@ customLib.prototype.html = function(html) {
     })
     return this;
 };
-customLib.prototype.fadeOut = function(timeOut) {
+customLib.prototype.fadeOut = function(timeOut,callback) {
+    callback=callback||function(){};
     timeOut=timeOut||40;
     this.each(function (item){
         let aux = item.style;
         aux.opacity = 1;
-        (function recFadeOut(){(aux.opacity-=.05)<0?aux.display="none":setTimeout(recFadeOut,timeOut)})();
+        (function recFadeOut(){(aux.opacity-=.05)<0?aux.display="none"&&callback():setTimeout(recFadeOut,timeOut)})();
     })
     return this;
 };
 customLib.prototype.fadeIn = function(timeOut,callback) {
     timeOut=timeOut||40;
+    callback=callback||function(){};
     this.each(function (item){
         let aux = item.style;
         aux.opacity="0";
@@ -155,6 +157,12 @@ customLib.prototype.eq = function(pos) {
     if(pos<this.elements.length)
         return this.elements[eq];
 };
+customLib.prototype.getScript = function(script){
+    let imported = document.createElement('script');
+    imported.src = script;
+    document.head.appendChild(imported);
+    return this;
+}
 //endregion
 //region AJAX
 customLib.prototype.ajax=function(args){
@@ -175,7 +183,13 @@ customLib.prototype.ajax=function(args){
     xhr.open(method,url);
     xhr.onload=function (){
         if(xhr.status===200){
-            let obj = JSON.parse(xhr.response);
+            let obj
+            try{
+                obj = JSON.parse(xhr.response);
+            }
+            catch(err) {
+                obj = xhr.response;
+            }
             success(obj);
         }
         else {
