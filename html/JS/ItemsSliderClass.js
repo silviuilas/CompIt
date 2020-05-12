@@ -46,8 +46,10 @@ class ItemsSliderClass{
             ;
 
         }
-        text=text+"<a class='prev' onclick='"+this.locationId+".plusSlides(-1)'>&#10094;</a>";
-        text=text+"<a class='next' onclick='"+this.locationId+".plusSlides(1)'>&#10095;</a>";
+        if(this.maxRenderItems<this.maxItems) {
+            text = text + "<a class='prev' onclick='" + this.locationId + ".plusSlides(-1)'>&#10094;</a>";
+            text = text + "<a class='next' onclick='" + this.locationId + ".plusSlides(1)'>&#10095;</a>";
+        }
         text=text+"</div>";
         if(this.maxItems===0){
            _(document.getElementById(this.locationId)).hide();
@@ -61,3 +63,5 @@ let rec_box =new ItemsSliderClass(rec_items_array,"rec_box");
 rec_box.makeItems();
 let last_viewed= new ItemsSliderClass(last_items_viewed,"last_viewed");
 last_viewed.makeItems();
+let today_deal_box =new ItemsSliderClass(today_deal_items_array,"today_deal_box");
+today_deal_box.makeItems();

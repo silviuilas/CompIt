@@ -27,7 +27,7 @@ switch ($function) {
             break;
         }
         $name=$_POST['product_name'];
-        $db = new Database();
+        $db = Database::getDatabaseObj();
         $db->connect();
         $query = $db->query("Select * from items where name ='".$name."'");
         $row=mysqli_fetch_row($query);

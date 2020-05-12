@@ -1,13 +1,14 @@
 <?php
 class Database
 {
+    private static $databaseObj;
     private $host;
     private $database;
     private $username;
     private $password;
     private $dbconnect;
 
-    public function __construct()
+    private function __construct()
     {
         $init_set=parse_ini_file(_FULL_PATH.'/configure/access.php');
 
@@ -78,6 +79,15 @@ class Database
     /**
      * @return mixed
      */
+    /**
+     * @return Database
+     */
+    public static function getDatabaseObj()
+    {
+        if(self::$databaseObj==null)
+             self::$databaseObj=new Database();
+        return self::$databaseObj;
+    }
     public function getDbconnect()
     {
         return $this->dbconnect;

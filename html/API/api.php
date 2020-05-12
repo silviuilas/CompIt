@@ -7,7 +7,7 @@ if(!empty($_GET['name']))
     $name=$_GET['name'];
 if(!empty($_GET['uri'])) {
     $uri = $_GET['uri'];
-    $db = new Database();
+    $db = Database::getDatabaseObj();
     $db->connect();
     $query = $db->query("Select id_items from items_links where link ='".$uri."'");
     if(mysqli_num_rows($query)){

@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Name or textarea BUG";
             die();
         }
-        $db = new Database();
+        $db = Database::getDatabaseObj();
         $db->connect();
         $name = trim($_POST["name"]);
         $userId=0;

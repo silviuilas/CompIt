@@ -16,7 +16,7 @@ function push_api_helper($array,$id,$db){
 }
 function get_price($name,$filter)
 {
-    $db = new Database();
+    $db = Database::getDatabaseObj();
     $db->connect();
     $query = $db->query("Select * from items where name like '%".$name."%'");
     $row=mysqli_fetch_row($query);

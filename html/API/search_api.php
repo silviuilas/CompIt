@@ -1,7 +1,7 @@
 <?php
 require_once ('../configure/config.php');
 
-$db = new Database();
+$db = Database::getDatabaseObj();
 $db->connect();
 $search_for=$_GET['search'];
 if(!empty($_GET['limit']))

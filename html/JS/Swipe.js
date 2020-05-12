@@ -81,3 +81,13 @@ var swiper2 = new Swipe(document.getElementById("last_viewed"));
 swiper2.onRight(function() {last_viewed.plusSlides( -1);});
 swiper2.onLeft(function() {last_viewed.plusSlides( +1);});
 swiper2.run();
+var swiper3 = new Swipe(document.getElementById("today_deal_box"));
+swiper3.onRight(function() {today_deal_box.plusSlides( -1);});
+swiper3.onLeft(function() {today_deal_box.plusSlides( +1);});
+swiper3.run();
+var swiper4 = new Swipe(document.getElementById("admin_rec_box"));
+swiper4.onRight(function() {admin_rec_box.plusSlides( -1);});
+swiper4.onLeft(function() {admin_rec_box.plusSlides( +1);});
+swiper4.run();
+
+

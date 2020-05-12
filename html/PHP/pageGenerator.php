@@ -22,7 +22,7 @@ function check_fav($currItem){
 ?>
 <?php
 $name = $_GET['name'];
-$db = new Database();
+$db = Database::getDatabaseObj();
 $db->connect();
 $query = $db->query("Select * from items where name ='".$name."'");
 $row=mysqli_fetch_row($query);
@@ -44,7 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Name or textarea BUG";
             die();
         }
-        $db = new Database();
+        $db = Database::getDatabaseObj();
         $db->connect();
         $name = trim($_POST["name"]);
         $userId=null;

@@ -13,7 +13,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Username sau password bug";
             die();
         }
-        $db = new Database();
+        $db = Database::getDatabaseObj();
         $db->connect();
         $name=trim($_POST["usrname"]);
         $pass=trim($_POST["paswd"]);
@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Username sau password bug";
             die();
         }
-        $db = new Database();
+        $db = Database::getDatabaseObj();
         $db->connect();
         $name=$_POST["usrname"];
         $pass=$_POST["paswd"];
