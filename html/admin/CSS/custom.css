@@ -31,6 +31,10 @@ body{
     overflow: hidden;
     text-decoration: none;
     user-select: none;
+    border-top: 1px solid black;
+}
+.side-text:last-child{
+    border-bottom: 1px solid black;
 }
 .side-text:hover{
     background: #ffb752;

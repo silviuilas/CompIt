@@ -8,6 +8,8 @@
     float:left;
     font-size:20px;
     background:white;
+    margin:20px 0;
+    border-bottom:1px solid black;
 }
 
 .item_slide_wrapper{

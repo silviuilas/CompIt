@@ -35,7 +35,6 @@ switch ($function) {
         if(!isset($_SESSION['fav']))
             $_SESSION['fav']=[];
         array_push($_SESSION['fav'],$row);
-        //TODO check if working
         $_SESSION['fav']=array_reverse(array_unique(array_reverse($_SESSION['fav']),SORT_REGULAR));
         if(count($_SESSION['fav'])>=30)
             unset($_SESSION['fav'][0]);

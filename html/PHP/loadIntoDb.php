@@ -1,6 +1,5 @@
 <?php
 require_once "../configure/config.php";
-//TODO uncoment
 $command = escapeshellcmd('python3 ../Python/Scraper/getCategoriLinks.py ');
 $strJsonFileContents = shell_exec($command);
 echo "contents recived";

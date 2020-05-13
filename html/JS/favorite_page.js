@@ -1,12 +1,4 @@
 let offset=0;
-let fadeInAnimationComplete=0;
-
-_(window).scroll(function() {
-    if(window.scrollY +  window.outerHeight >  window.outerHeight - 100) {
-        load_favorites();
-        offset++;
-    }
-});
 
 function load_favorites(){
     favorite_items(offset);
@@ -17,7 +9,7 @@ function favorite_items(off) {
     if(off*25>fav_items.length)
         return;
     for (i = off*25; i < fav_items.length; i++) {
-        var name = fav_items[i][2];
+        let name = fav_items[i][2];
         if (name.length > 40)
             name = name.slice(0, 38) + "...";
         text = text + "<a href='"+_URL+"/PHP/pageGenerator.php?name="+fav_items[i][2]+"'>"+

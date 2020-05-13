@@ -38,6 +38,7 @@
 #slide-burger{
     display: flex;
     justify-content: center;
+    margin-bottom: 50px;
 }
 #slide-burger i{
     font-size:30px;
