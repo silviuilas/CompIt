@@ -7,7 +7,7 @@ $php_array = $db->queryArray("Select * from items order by views desc",30);
 $rec_js_array = json_encode($php_array);
 $php_array = $db->queryArray("Select * from items i join rec_items r on i.id=r.id_items order by r.item_order",30);
 $admin_rec_js_array=json_encode($php_array);
-$php_array = $db->queryArray("Select * from items i join td_deals td on i.id=td.id_item order by created_at,td.percent",30);
+$php_array = $db->queryArray("Select * from items i join td_deals td on i.id=td.id_item order by created_at DESC,td.percent",30);
 $today_deal_js_array=json_encode($php_array);
 if(!isset($_SESSION['last_viewed_items']))
     $_SESSION['last_viewed_items']=[];
