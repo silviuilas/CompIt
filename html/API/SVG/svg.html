@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Price history for your item</title>
+    <link rel="stylesheet" href="{URL}/API/SVG/svg.css">
+</head>
+
+<body>
+    <div class="centerFlex">
+        <svg class="graph">
+            <g class="labels x-labels">
+                <text x="70" y="250">{DATE0}</text>
+                <text x="120" y="250">{DATE1}</text>
+                <text x="170" y="250">{DATE2}</text>
+                <text x="220" y="250">{DATE3}</text>
+                <text x="270" y="250">{DATE4}</text>
+                <text x="320" y="250">{DATE5}</text>
+                <text x="370" y="250">{DATE6}</text>
+            </g>
+            <g class="labels y-labels">
+                <text x="50" y="15">{PRICE6}</text>
+                <text x="50" y="48">{PRICE5}</text>
+                <text x="50" y="81">{PRICE4}</text>
+                <text x="50" y="115">{PRICE3}</text>
+                <text x="50" y="148">{PRICE2}</text>
+                <text x="50" y="181">{PRICE1}</text>
+                <text x="50" y="215">{PRICE0}</text>
+            </g>
+            <g class="surfaces">
+                <path class="first_set" d="M70,210 L70,{POINT0} L120,{POINT1} L170,{POINT2} L220,{POINT3} L270,{POINT4} L320,{POINT5} L370,{POINT6} L370,210 Z"></path>
+            </g>
+
+            <g class="first_set points" data-setname="Our first data set">
+                <circle cx="70" cy="{POINT0}" data-value="7.2" r="5"></circle>
+                <circle cx="120" cy="{POINT1}" data-value="8.1" r="5"></circle>
+                <circle cx="170" cy="{POINT2}" data-value="7.7" r="5"></circle>
+                <circle cx="220" cy="{POINT3}" data-value="6.8" r="5"></circle>
+                <circle cx="270" cy="{POINT4}" data-value="6.7" r="5"></circle>
+                <circle cx="320" cy="{POINT5}" data-value="6.7" r="5"></circle>
+                <circle cx="370" cy="{POINT6}" data-value="6.7" r="5"></circle>
+            </g>
+        </svg>
+    </div>
+</body>
+</html>

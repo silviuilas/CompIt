@@ -1,6 +1,8 @@
 var _URL = "https://compit.dev";
 var _Loaded_Vendors=null;
 var _Curr_path;
+var _Item_name;
+
 _(function(){
     _('#checkPage').click(changePage);
     _('#checkMainPage').click(changePage);
@@ -34,6 +36,8 @@ function showNothing(){
 }
 function showImg(){
         document.getElementById('history_svg').style.display="";
+        if(_Item_name!=null)
+            document.getElementById('history_svg').innerHTML="<iframe src=\""+_URL+"/API/SVG/svgGenerator.php?name="+_Item_name+"\" width=\"430px\" height=\"270px\" frameBorder=\"0\" scrolling=\"no\"></iframe>\n"
         document.getElementById('prices_list').style.display="none";
 }
 function showItems(data_array){
@@ -41,37 +45,39 @@ function showItems(data_array){
     document.getElementById('prices_list').style.display="";
     if(_Loaded_Vendors!=null)
         data_array=_Loaded_Vendors;
-    if(data_array!=null) {
-        _Loaded_Vendors=data_array;
+    if (data_array != null) {
+        _Loaded_Vendors = data_array;
+
         function showElement(item) {
             document.getElementById('prices_list').innerHTML +=
-                "<a href='"+item['link']+"'  target=\"_blank\">"+
-                    "<div class='in_item'>" +
-                        "<div class='in_item_shopimg_box'>" +
-                            "<img class='in_item_shopimg_img'src='" + item['shopimg'] + "'>" +
-                        "</div>" +
-                        "<div class='in_item_shopname'>" +
-                            item['shopname'] +
-                        "</div>" +
-                        "<div class='in_item_price'>" +
-                            item['price'] +
-                        "</div>" +
-                    "</div>"+
-                "</a>"+
+                "<a href='" + item['link'] + "'  target=\"_blank\">" +
+                "<div class='in_item'>" +
+                "<div class='in_item_shopimg_box'>" +
+                "<img class='in_item_shopimg_img'src='" + item['shopimg'] + "'>" +
+                "</div>" +
+                "<div class='in_item_shopname'>" +
+                item['shopname'] +
+                "</div>" +
+                "<div class='in_item_price'>" +
+                item['price'] +
+                "</div>" +
+                "</div>" +
+                "</a>" +
                 "<div class='space'></div>";
         }
 
         document.getElementById('prices_list').innerHTML = "<div class='in_items_wrapper'>";
         data_array['items'].forEach(showElement);
-        _Curr_path="/PHP/pageGenerator.php?name="+data_array['name'];
+        _Curr_path = "/PHP/pageGenerator.php?name=" + data_array['name'];
+        _Item_name = data_array['name'];
         document.getElementById('prices_list').innerHTML += '</div>';
         let x = document.getElementsByClassName('in_item');
         let i;
         for (i = 0; i < x.length; i++) {
-            if(!(i%2===0))
+            if (!(i % 2 === 0))
                 x[i].style.background = "white";
             else
-                x[i].style.background="lightgray";
+                x[i].style.background = "lightgray";
         }
     }
 }
