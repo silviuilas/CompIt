@@ -1,0 +1,39 @@
+body {
+    background: white;
+}
+
+svg.graph {
+    height: 250px;
+    width: 430px;
+}
+
+svg.graph .points {
+    stroke: white;
+    stroke-width: 3;
+}
+svg.graph .first_set {
+    fill: #2EC0F9;
+}
+
+svg.graph .surfaces {
+    fill-opacity: 0.5;
+}
+
+
+svg.graph .labels {
+    font-family: Arial;
+    font-size: 14px;
+    kerning: 1;
+}
+
+svg.graph .labels.x-labels {
+    text-anchor: middle;
+}
+
+svg.graph .labels.y-labels {
+    text-anchor: end;
+}
+.centerFlex{
+    display: flex;
+    justify-content: center;
+}
