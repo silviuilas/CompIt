@@ -1,6 +1,7 @@
 <?php
 class DatabaseA
 {
+    private static $databaseObj;
     private $host;
     private $database;
     private $username;
@@ -63,6 +64,14 @@ class DatabaseA
         }
 
         return $rows;
+    }
+
+
+    public static function getDatabaseObj()
+    {
+        if(self::$databaseObj==null)
+            self::$databaseObj=new DatabaseA();
+        return self::$databaseObj;
     }
 
     /**
