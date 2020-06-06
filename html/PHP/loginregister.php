@@ -27,7 +27,7 @@ $loginError="style=display:none";
 $registerError="style=display:none";
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     //TODO MAKE IT SECURE FOR HTML INJECTIONS
-    if($_POST["type"]=="SignUp") {
+    if($_POST["type"]=="Inregistrare") {
         $username=$_POST["usrname"];
         $password=$_POST["paswd"];
         $email = $_POST["email"];
@@ -53,9 +53,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $db->query("INSERT INTO users_info (username,password,email) VALUES ('$name','$pass','$email')");
         logIn($username,$password);
     }
-    else if($_POST["type"]=="LogIn"){
+    else if($_POST["type"]=="Intra"){
         if (isset($_POST["usrname"])==NULL or isset($_POST["paswd"])==NULL) {
-
         }
         logIn($_POST["usrname"],$_POST["paswd"]);
         $loginError="";

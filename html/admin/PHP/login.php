@@ -5,7 +5,6 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //TODO MAKE IT SECURE FOR HTML INJECTIONS
     require_once('PHP/DatabaseA.php');
     $db = DatabaseA::getDatabaseObj();
     $db->connect();
