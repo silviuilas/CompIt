@@ -5,7 +5,7 @@ function logIn($name,$pass){
     $result = $db->query("Select * from users_info where username='$name'");
     if(($row = mysqli_fetch_row($result))!=NULL) {
         if ($row[1] == $name)
-            if ($row[2] == $pass) {
+            if (password_verify($pass,$row[2])) {
                 $_SESSION['header']->update_array(array('NAME'=>$_POST['usrname']));
                 $_SESSION['header']->update_array(array('NOTLOGGED'=>"display:none"));
                 $_SESSION['header']->update_array(array('LOGGED'=>""));
@@ -50,13 +50,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 $registerError="";
             }
         }
-        $db->query("INSERT INTO users_info (username,password,email) VALUES ('$name','$pass','$email')");
-        logIn($username,$password);
+        $hashedPass=password_hash($pass, PASSWORD_BCRYPT, array('cost'=>12));
+        $db->query("INSERT INTO users_info (username,password,email) VALUES ('$name','$hashedPass','$email')");
+        logIn($username,$pass);
     }
     else if($_POST["type"]=="Intra"){
         if (isset($_POST["usrname"])==NULL or isset($_POST["paswd"])==NULL) {
         }
-        logIn($_POST["usrname"],$_POST["paswd"]);
+        logIn(trim($_POST["usrname"]),trim($_POST["paswd"]));
         $loginError="";
     }
 }
