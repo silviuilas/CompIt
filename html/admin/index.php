@@ -1,5 +1,6 @@
 <?php require_once('configure/configAdmin.php') ?>
 <?php require_once('PHP/login.php') ?>
+<?php require_once('PHP/register.php') ?>
 <?php
 $db = new DatabaseA();
 $db->connect();
@@ -9,7 +10,7 @@ if (!isset($_SESSION['adminId'])) {
     $index = new CustomTempA('html_files/login.html', array('URL' => _SITE_URL));
 } else {
     $_SESSION['headerA']->update_array(array('IS_LOGGED_IN'=>""));
-    $_SESSION['headerA']->update_array(array('NAME'=>$_SESSION['username']));
+    $_SESSION['headerA']->update_array(array('NAME'=>$_SESSION['adminUser']));
     $index = new CustomTempA('html_files/mainPage.html', array('URL' => _SITE_URL));
 }
 $_SESSION['headerA']->show_file_modified();

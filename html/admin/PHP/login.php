@@ -16,11 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    $result = $db->query("Select * from users_info where username='$name'");
+    $result = $db->query("Select * from admins_info where username='$name'");
     if (($row = mysqli_fetch_row($result)) != NULL) {
         if ($row[1] == $_POST['usrname'])
             if ($row[2] == $_POST['paswd']) {
-                $_SESSION['username'] = $_POST['usrname'];
+                $_SESSION['adminUser'] = $_POST['usrname'];
                 $_SESSION['adminId'] = $row[0];
             }
     }
