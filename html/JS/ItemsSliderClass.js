@@ -35,7 +35,7 @@ class ItemsSliderClass{
             if(name.length>40)
                 name=name.slice(0,38)+"...";
             text=text+ "<a href='"+_URL+"/PHP/pageGenerator.php?name="+this.items[i][2]+"'>"+
-                "<div class='item_slide'>"+
+                "<div class='item_slide "+this.items[i][7]+"'>"+
                     "<img class='item_slide_img' src='"+this.items[i][4]+"'>" +
                     "<div class='space'\"></div>"+
                     "<div class='item_slide_text'>"+name+"</div>"+
@@ -56,6 +56,39 @@ class ItemsSliderClass{
         }
         document.getElementById(this.locationId).innerHTML=text;
     }
+    redraw(){
+        let elem=document.getElementById(this.locationId);
+        let elements=elem.getElementsByClassName("item_slide");
+        let nr=0;
+        for(let i=0;i<elements.length;i++){
+            if (window.getComputedStyle(elements[i]).display === "none") {
+                nr++;
+            }
+        }
+        this.maxRenderItems=this.items.length-nr;
+        if(this.maxRenderItems<this.maxItems) {
+            if(elem.getElementsByClassName("prev")[0]!=null) {
+                elem.getElementsByClassName("prev")[0].style.display = "none";
+            }
+            if(elem.getElementsByClassName("next")[0]!=null) {
+                elem.getElementsByClassName("next")[0].style.display = "none";
+            }
+        }
+        else{
+            if(elem.getElementsByClassName("prev")[0]!=null) {
+                elem.getElementsByClassName("prev")[0].style.display = "";
+            }
+            if(elem.getElementsByClassName("next")[0]!=null) {
+                elem.getElementsByClassName("next")[0].style.display = "";
+            }
+        }
+    }
+}
+function redrawBoxes(){
+    admin_rec_box.redraw();
+    rec_box.redraw();
+    last_viewed.redraw();
+    today_deal_box.redraw();
 }
 let admin_rec_box =new ItemsSliderClass(admin_rec_items_array,"admin_rec_box");
 admin_rec_box.makeItems();

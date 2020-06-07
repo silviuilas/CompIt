@@ -1,0 +1,49 @@
+/*.toggleCheckBoxWrap label {
+    overflow: auto;
+}
+.toggleCheckBoxWrap label input {
+    visibility: hidden;!* <-- Hide the default checkbox. The rest is to hide and allow tabbing, which display:none prevents *!
+    display: block;
+    height: 0;
+    width: 0;
+    position: absolute;
+    overflow: hidden;
+}
+[type=checkbox]:checked ~ toggleCheckBox {!* <-- Style its checked state *!
+    background: black;
+}*/
+.checkBoxOn{
+    background: #0398fc;
+    left: 0;
+    transform: translateX(0);
+}
+.checkBoxOff{
+    background: #fa2f2f;
+    transform: translateX(+100%);
+}
+.toggleCheckBox{
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+    float: left;
+    transition-duration: 0.5s;
+}
+.toggleCheckBoxWrap{
+    width: 52px;
+    height: 26px;
+    background: white;
+    display: inline-block;
+    border: 1px solid black;
+}
+.checkBox{
+    display: inline-block;
+    margin:0 20px;
+    height: 26px;
+    line-height: 26px;
+}
+.checkBoxText{
+    display: inline-block;
+    line-height: 26px;
+    height: 26px;
+    transform: translateY(-8px);
+}
