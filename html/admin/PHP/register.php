@@ -18,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $db->connect();
         $name = trim($username);
         $pass = trim($password);
-        echo("tes2t");
+
         if (isset($email))
 
             $email = trim($email);
@@ -33,8 +33,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             echo("test4");
         }
         echo("test5");
-        $db->query("INSERT INTO admins_info (username,password,email) VALUES ('$name','$pass','$email')");
-        echo("test6");
+        $hashedPass=password_hash($pass, PASSWORD_BCRYPT, array('cost'=>12));
+        $db->query("INSERT INTO users_info (username,password,email) VALUES ('$name','$hashedPass','$email')");
 
     }
 }
