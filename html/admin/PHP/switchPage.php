@@ -9,6 +9,8 @@ if(isset($_SESSION['adminId'])) {
     $showPage->show_file_modified();
 }
 else{
-    $showPage = new CustomTempA('index.php', array('URL' => _SITE_URL));
-    $showPage->show_file_modified();
+    $index = new CustomTempA('html_files/login.html', array('URL' => _SITE_URL));
+    $_SESSION['headerA']->show_file_modified();
+    $index->show_file_modified();
+    $_SESSION['footerA']->show_file_modified();
 }

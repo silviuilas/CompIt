@@ -3,15 +3,15 @@
 <?php
 $db = new DatabaseA();
 $db->connect();
-$_SESSION['headerA']->show_file_modified();
 
 if (!isset($_SESSION['adminId'])) {
-    $index = new CustomTempA('html_files/login.html', array('URL' => _SITE_URL,'IS_LOGGED_IN'=>"style='display:none'"));
+    $_SESSION['headerA']->update_array(array('IS_LOGGED_IN'=>"style='display:none'"));
+    $index = new CustomTempA('html_files/login.html', array('URL' => _SITE_URL));
 } else {
+    $_SESSION['headerA']->update_array(array('IS_LOGGED_IN'=>""));
     $index = new CustomTempA('html_files/mainPage.html', array('URL' => _SITE_URL));
-    echo("SAlult");
 }
-
+$_SESSION['headerA']->show_file_modified();
 $index->show_file_modified();
 $_SESSION['footerA']->show_file_modified();
 
