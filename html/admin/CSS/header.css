@@ -43,6 +43,11 @@
 #slide-burger i{
     font-size:30px;
 }
+.headerText{
+    color:white;
+    font-size:20px;
+    text-decoration: none;
+}
 @media only screen and (max-width:1000px) and (min-width: 0px) {
     .header-spacer{
         width: 0;

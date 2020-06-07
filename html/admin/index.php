@@ -9,10 +9,10 @@ if (!isset($_SESSION['adminId'])) {
     $index = new CustomTempA('html_files/login.html', array('URL' => _SITE_URL));
 } else {
     $_SESSION['headerA']->update_array(array('IS_LOGGED_IN'=>""));
+    $_SESSION['headerA']->update_array(array('NAME'=>$_SESSION['username']));
     $index = new CustomTempA('html_files/mainPage.html', array('URL' => _SITE_URL));
 }
 $_SESSION['headerA']->show_file_modified();
 $index->show_file_modified();
 $_SESSION['footerA']->show_file_modified();
-
 ?>
