@@ -9,7 +9,7 @@ if (!empty($_GET['uri'])) {
     $uri = $_GET['uri'];
     $db = Database::getDatabaseObj();
     $db->connect();
-    $query = $db->query("Select id_items from items_links where link ='" . $uri . "'");
+    $query = $db->query("Select id_items from items_links where link like'%" . $uri . "%'");
     if (mysqli_num_rows($query)) {
         $row = mysqli_fetch_row($query);
         $query = $db->query("Select name from items where id =" . $row[0]);
@@ -25,7 +25,11 @@ if ($name) {
         $filters = $_GET['filters'];
     else
         $filters = "";
-    $price = get_price($name, $filters);
+    if (!empty($_GET['site']))
+        $site = $_GET['site'];
+    else
+        $site = "";
+    $price = get_price($name, $filters, $site);
 
     if (empty($price)) {
         response(201, "Product Not Found", NULL);

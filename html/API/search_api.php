@@ -12,11 +12,15 @@ if(!empty($_GET['offset']))
     $offset= $_GET['offset'];
 else
     $offset=0;
+if(!empty($_GET['site']))
+    $siteAnd=" site='".$_GET['site']."' and ";
+else
+    $siteAnd="";
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 if(!isset($_SESSION['search_query']));{
-    $_SESSION['search_query'] = $db->query("Select * from items where name LIKE '%".$search_for."%' limit ".$limit." offset ".$offset);
+    $_SESSION['search_query'] = $db->query("Select * from items where".$siteAnd." name LIKE '%".$search_for."%' limit ".$limit." offset ".$offset);
 }
 $query=$_SESSION['search_query'];
 $i=0;

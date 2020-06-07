@@ -19,11 +19,14 @@ function push_api_helper($array, $id, $db, $site)
     }
 }
 
-function get_price($name, $filter)
+function get_price($name, $filter, $site)
 {
     $db = Database::getDatabaseObj();
     $db->connect();
-    $query = $db->query("Select * from items where name like '%" . $name . "%'");
+    $and="";
+    if($site!="")
+        $and=$and." and site like '%".$site."%'";
+    $query = $db->query("Select * from items where name like '%" . $name . "%' ".$and);
     $row = mysqli_fetch_row($query);
     $db->query("Update items set views=" . ($row[6] + 1) . " where id=" . $row[0]);
     if ($row != NULL) {
