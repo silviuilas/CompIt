@@ -23,7 +23,12 @@ function get_price($name, $filter)
     $row = mysqli_fetch_row($query);
     $db->query("Update items set views=" . ($row[6] + 1) . " where id=" . $row[0]);
     if ($row != NULL) {
-        $command = escapeshellcmd('../Python/Scraper/scrapeOnePage.py ' . $row[5]);
+        if($row[7]=='compari.ro'){
+            $command = escapeshellcmd('../Python/Scraper/scrapeOnePage.py ' . $row[5]);
+        }
+        else if($row[7]=='compara.ro') {
+            $command = escapeshellcmd('../Python/Scraper/scrapeOnePageCompara.py ' . $row[5]);
+        }
         $output = shell_exec($command);
         $array = json_decode($output, true);
         push_api_helper($array, $row[0], $db);
