@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="header-wrap">
-    <div class="header-panel">
+    <div class="header-panel" {IS_LOGGED_IN}>
         <div id="slide-burger-header">
             <i class="fa fa-bars" onclick="slideBurger()"></i>
         </div>
@@ -23,7 +23,7 @@
         <a href="#">Logout</a>
     </div>
 </div>
-<div class="side-panel" id="side-panel">
+<div class="side-panel" id="side-panel" {IS_LOGGED_IN}>
     <div id="slide-burger">
         <i class="fa fa-bars" onclick="slideBurger()"></i>
     </div>
