@@ -22,10 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($row[2] == $_POST['paswd']) {
                 $_SESSION['username'] = $_POST['usrname'];
                 $_SESSION['adminId'] = $row[0];
-                die();
             }
     }
 }
-echo($_SESSION['adminId']);
-
-?>

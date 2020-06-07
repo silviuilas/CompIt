@@ -5,7 +5,7 @@ $db = new DatabaseA();
 $db->connect();
 $_SESSION['headerA']->show_file_modified();
 
-if (isset($_SESSION['adminId'])) {
+if (!isset($_SESSION['adminId'])) {
     $index = new CustomTempA('html_files/login.html', array('URL' => _SITE_URL));
 } else {
     $index = new CustomTempA('html_files/mainPage.html', array('URL' => _SITE_URL));
