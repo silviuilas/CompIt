@@ -24,5 +24,4 @@ $index->show_file_modified();
 </script>
 <?php
 $_SESSION['footer']->show_file_modified();
-var_dump('test');
 ?>

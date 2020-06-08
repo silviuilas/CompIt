@@ -27,9 +27,8 @@ class ItemsSliderClass{
     }
     makeItems() {
         let text="";
-        let i=0;
         text=text+"<div class='item_slide_wrapper'>";
-        for(i=0;i<this.maxItems;i++) {
+        for(let i=0;i<this.maxItems;i++) {
             //THIS IS MADE TO MAKE A COPY OF A STRING
             let name = (' ' + this.items[i][2]).slice(1);
             if(name.length>40)
@@ -90,6 +89,27 @@ function redrawBoxes(){
     last_viewed.redraw();
     today_deal_box.redraw();
 }
+let shopify_array=[];
+function getRssFromSpotify(){
+    _().get("https://www.compit.dev/media/shopify.xml",function (result){
+        let parser = new DOMParser();
+        let xmlDoc = parser.parseFromString(result,"text/xml");
+        let items=xmlDoc.getElementsByTagName("item");
+        for(let i=0;i<items.length;i++) { //replace(/ *\<[^)]*\> */g, "")
+            shopify_array[i]=[];
+            shopify_array[i][7]="shopify.ro";
+            shopify_array[i][3]="__";//price
+            shopify_array[i][4]=items[i].childNodes[5].textContent.trim(); //img link
+            shopify_array[i][2]=items[i].childNodes[1].textContent.trim(); //name
+            shopify_array[i][8]=items[i].childNodes[3].textContent.trim(); //link
+        }
+        let shopify =new ItemsSliderClass(shopify_array,"shopify");
+        shopify.makeItems();
+        for(let i=0;i<items.length;i++) {
+            document.getElementById("shopify").getElementsByTagName('a')[i].setAttribute("href",shopify_array[i][8]);
+        }
+    });
+}
 let admin_rec_box =new ItemsSliderClass(admin_rec_items_array,"admin_rec_box");
 admin_rec_box.makeItems();
 let rec_box =new ItemsSliderClass(rec_items_array,"rec_box");
@@ -98,3 +118,4 @@ let last_viewed= new ItemsSliderClass(last_items_viewed,"last_viewed");
 last_viewed.makeItems();
 let today_deal_box =new ItemsSliderClass(today_deal_items_array,"today_deal_box");
 today_deal_box.makeItems();
+getRssFromSpotify();

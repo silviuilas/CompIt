@@ -26,7 +26,6 @@ if (session_status() == PHP_SESSION_NONE) {
 $loginError="style=display:none";
 $registerError="style=display:none";
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    //TODO MAKE IT SECURE FOR HTML INJECTIONS
     if($_POST["type"]=="Inregistrare") {
         $username=$_POST["usrname"];
         $password=$_POST["paswd"];
@@ -61,6 +60,35 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $loginError="";
     }
 }
+function httpPost($url, $data)
+{
+    try{
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_CAINFO, "/home/silviu/Downloads". '/cacert.pem');
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true);
+
+        $response = curl_exec($curl);
+        if ($response === false) {
+            throw new Exception(curl_error($curl), curl_errno($curl));
+        }
+        curl_close($curl);
+    }
+    catch(Exception $e) {
+        trigger_error(sprintf(
+            'Curl failed with error #%d: %s',
+            $e->getCode(), $e->getMessage()),
+            E_USER_ERROR);
+
+    }
+    return $response;
+}
+$url = 'https://www.compit.dev/authenticationMicroService/handleRequest.php';
+$data = array('type' => 'Intra', 'usrname' => 'silviuilas', 'paswd' => 'qazqazqaz1');
+//$var=httpPost($url,$data);
+//var_dump($var);
 $_SESSION['header']->show_file_modified();
 $loginregister = new CustomTemp('html_files/loginregister.html',array('URL' => _SITE_URL,'loginError'=>$loginError,'registerError'=>$registerError));
 $loginregister->show_file_modified();
