@@ -1,0 +1,56 @@
+<rss version="2.0">
+<channel>
+    <title>Shoply News!</title>
+    <link>http://localhost/stars/incercam.html</link>
+    <description>Aici sunt ultimele stiri</description>
+    <language>ro</language>
+    <item>
+        <title>Cel mai cautat produs de azi.</title>
+        <link>
+            https://lego.compari.ro/lego/ninjago-templul-imperial-al-nebuniei-71712-p523515378/
+        </link>
+        <image>
+            <url>
+                https://p1.akcdn.net/thumb/609787002.apple-iphone-11-64gb.jpg
+            </url>
+        </image>
+        <description>Acesta este cel mai cautat produs din luna Iunie</description>
+    </item>
+    <item>
+        <title>Distractie pentru mari si mici</title>
+        <link>
+            https://lego.compari.ro/lego/ninjago-templul-imperial-al-nebuniei-71712-p523515378/
+        </link>
+        <image>
+            <url>
+                https://p1.akcdn.net/thumb/641548680.lego-ninjago-templul-imperial-al-nebuniei-71712.jpg
+            </url>
+        </image>
+        <description>Cel mai bun produs din categoria "jucarii"</description>
+    </item>
+    <item>
+        <title>Cel mai cautat produs de azi</title>
+        <link>
+            https://www.compari.ro/aparate-foto-c40/canon/eos-m50-ef-m-15-45mm-is-stm-p400406483/
+        </link>
+        <image>
+            <url>
+                https://p1.akcdn.net/thumb/484174727.canon-eos-m50-ef-m-15-45mm-is-stm.jpg
+            </url>
+        </image>
+        <description>Acesta este cel mai cautat produs din luna Mai</description>
+    </item>
+    <item>
+        <title>Cel mai cautat produs de azi</title>
+        <link>
+            https://www.compari.ro/telefoane-mobile-c3277/apple/iphone-11-64gb-p497417526/
+        </link>
+        <image>
+            <url>
+                https://p1.akcdn.net/thumb/609787002.apple-iphone-11-64gb.jpg
+            </url>
+        </image>
+        <description>Acesta este cel mai cautat produs din luna Aprilie</description>
+    </item>
+</channel>
+</rss>

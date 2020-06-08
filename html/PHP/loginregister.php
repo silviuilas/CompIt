@@ -26,7 +26,6 @@ if (session_status() == PHP_SESSION_NONE) {
 $loginError="style=display:none";
 $registerError="style=display:none";
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    //TODO MAKE IT SECURE FOR HTML INJECTIONS
     if($_POST["type"]=="Inregistrare") {
         $username=$_POST["usrname"];
         $password=$_POST["paswd"];

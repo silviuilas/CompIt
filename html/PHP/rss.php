@@ -3,7 +3,7 @@ require_once ('../configure/config.php');
 
 $db = Database::getDatabaseObj();
 $db->connect();
-$result = $db->query("SELECT * FROM `td_deals` left join `items` on id_item = items.id ORDER BY `created_at`");
+$result = $db->query("SELECT * FROM `td_deals` left join `items` on id_item = items.id ORDER BY `created_at` limit 25");
 
 header("Content-Type: text/xml;charset=iso-8859-1");
 
