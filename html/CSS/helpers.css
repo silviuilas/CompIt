@@ -30,6 +30,10 @@ footer{
     font-size: 20px;
     margin-left:50px;
 }
+.rssImg{
+    width: 20px;
+    height: 20px;
+}
 .followRss a:link{
     text-decoration: none;
 }
