@@ -4,10 +4,10 @@
     border-color:gray;
     border-radius: 10px;
     font-size: 20px;
+    margin-bottom: 0.5%;
 }
 .opinion textarea{
-    border-style:ridge;
-    border-color:gray;
+    border:3px ridge gray;
     border-radius: 10px;
     font-size: 15px;
 }
@@ -21,19 +21,21 @@
     font-size: 20px;
 }
 .opinion input:hover[type=submit] {
-    background-color:#3b3b3b;
+    background-color:darkred;
     color:white;
 }
-.opinion input:hover[type=text] {
+.opinion input:hover[type=text],.opinion input:active[type=text] {
     padding-left:3%;
     border-style:ridge;
     border-color:red;
     border-radius: 10px;
     font-size: 20px;
 }
-.opinion textarea:hover{
-    border-style:ridge;
-    border-color:red;
+.opinion textarea:hover,.opinion textarea:active{
+
+    border:3px ridge red;
     border-radius: 10px;
     font-size: 15px;
+    border-block-width: medium;
 }
+

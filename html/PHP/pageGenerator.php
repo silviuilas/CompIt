@@ -27,6 +27,7 @@ $db->connect();
 $query = $db->query("Select * from items where name ='".$name."'");
 $row=mysqli_fetch_row($query);
 push_last_viewed_item($row);
+$iditem=$row[0];
 $subcategory=$row[1];
 $query = $db->query("Select * from subcategory as sub join category as cat on sub.id_category=cat.id where sub.id='".$subcategory."'");
 $row1=mysqli_fetch_row($query);
@@ -53,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         $comm = trim($_POST["mes"]);
         $date= date("Y/m/d");
-        if($db->query("INSERT INTO comms (id_user,titlu,mesaj,date_created) VALUES ('$userId','$name','$comm','$date')"))
+        if($db->query("INSERT INTO comms (id_user,titlu,mesaj,id_item,date_created) VALUES ('$userId','$name','$comm','$iditem','$date')"))
             echo "Realizat";
     }
 }
