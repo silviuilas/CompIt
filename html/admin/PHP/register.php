@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         echo("test5");
         $hashedPass=password_hash($pass, PASSWORD_BCRYPT, array('cost'=>12));
-        $db->query("INSERT INTO users_info (username,password,email) VALUES ('$name','$hashedPass','$email')");
+        $db->query("INSERT INTO admins_info (username,password,email) VALUES ('$name','$hashedPass','$email')");
 
     }
 }

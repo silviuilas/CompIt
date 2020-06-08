@@ -1,0 +1,39 @@
+.opinion input[type=text] {
+    padding-left:3%;
+    border-style:ridge;
+    border-color:gray;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.opinion textarea{
+    border-style:ridge;
+    border-color:gray;
+    border-radius: 10px;
+    font-size: 15px;
+}
+.opinion input[type=submit] {
+    margin-bottom:15%;
+    padding-left:7%;
+    padding-right:7%;
+    border-style:ridge;
+    border-color:gray;
+    border-radius: 20px;
+    font-size: 20px;
+}
+.opinion input:hover[type=submit] {
+    background-color:#3b3b3b;
+    color:white;
+}
+.opinion input:hover[type=text] {
+    padding-left:3%;
+    border-style:ridge;
+    border-color:red;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.opinion textarea:hover{
+    border-style:ridge;
+    border-color:red;
+    border-radius: 10px;
+    font-size: 15px;
+}
