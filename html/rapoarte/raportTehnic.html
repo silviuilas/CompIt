@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/scholarly.min.css">
+    <script src="js/scholarly.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Raport Tehnic CompIT</h1>
+        <div role="contentinfo">
+            <section typeof="sa:AuthorsList">
+                <h2>Authors</h2>
+                <ul>
+                    <li typeof="sa:ContributorRole" property="schema:author">
+                        <span typeof="schema:Person">
+                            <meta property="schema:givenName" content="Silviu">
+                            <meta property="schema:additionalName" content="">
+                            <meta property="schema:familyName" content="Ilas">
+                            <span property="schema:name">Silviu Ilas</span>
+                        </span>
+                        <ul>
+                            <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                                <a href="mailto:jholland@umich.edu"
+                                   property="schema:email">silviu.ilas@info.uaic.ro</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li typeof="sa:ContributorRole" property="schema:author">
+                        <span typeof="schema:Person">
+                            <meta property="schema:givenName" content="Dragos">
+                            <meta property="schema:additionalName" content="">
+                            <meta property="schema:familyName" content="Brasovianu">
+                            <span property="schema:name">Dragos Brasovianu</span>
+                        </span>
+                        <ul>
+                            <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                                <a href="mailto:jholland@umich.edu"
+                                   property="schema:email">dragos.brasovianu@info.uaic.ro</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </header>
+    <section id="introduction" role="doc-introduction">
+        <h2>Introducere</h2>
+        <p>
+        În acest raport vom prezenta evoluția proiectului pe tot parcursul sau și tehnologiile folosite.
+            Raportul va fi structurat pe 3 categorii numite <a href="#doc-arhitectura">
+            Arhitectura aplicației</a>, <a href="#doc-interfata">Interfață Aplicației</a> și <a href="#doc-api">Documentația API-urilor</a>, toate trei au fost dezvoltate concomitent pentru a asigura o integrare ușoară între ele.
+        </p>
+    </section>
+    <section id="structure">
+        <h2>Structura</h2>
+        <section id="doc-interfata">
+            <h3>Interfata Aplicatiei</h3>
+            <section id="interfata-evolutie">
+                <h4>Evolutie Interfata</h4>
+                <section id="basic">
+                    <h4>Baza</h4>
+                    <p>După crearea design-ului în photoshop am hotărât că site-ul să aibă 3 pagini principale, cea principala, unde se afișează majoritatea detaliilor pe care un utilizator ar vrea să le vadă(Ex: cele mai vizionate produse), pagină produsului unde o să se afișeze informații relevante ( Ex: istoricul produsului) și pagină de search unde poți caută produsul după anumit nume.</p>
+                </section>
+                <section id="autentificare">
+                    <h4>Autentificare</h4>
+                    <p>Pentru ai da funcționalitate, am adăugat o pagină de înregistrare/logare și o pagină unde îți poți vedea produsele favorite.</p>
+                </section>
+                <section id="modulAdministrare">
+                    <h4>Modul Administrare</h4>
+                    <p>A devenit clar că un modul de administrare poate fi util așa că am făcut design-ul pentru acesta. Pentru ai da un aspect diferit de site-ul principal, dar care totuși să fie destul de general încât să ne fie ușor să îi adăugăm funcționalități în viitor, am hotărât că modulul de administrare să fie împărțit în 2 părți, bară de administrare și conținutul relevant. Deoarece bară de administrare rămâne la fel, indiferent de conținut, am ales că pagină mereu să rămână la același url, iar conținutul relevant să fie încărcat dinamic. Evident, pentru a accesa modulul de administrare este necesar un cont diferit fata de cel obișnuit. Odata logat orice admin poate crea noi admini</p>
+                </section>
+                <section id="designExtensie">
+                    <h4>Design Extensie</h4>
+                    <p>Design-ul extensiei a fost făcut să semene cât mai mult cu cel al paginii produsului, așadar informațiile relevante și paleta de culori sunt la fel pe ambele</p>
+                </section>
+                <section id="schimbareSite">
+                    <h4>Schimbare Site</h4>
+                    <p>După adăugarea produselor de pe diferite site-uri, am adăugat 2 butoane care schimbă dintre afișarea produselor de pe "compari.ro" și cele de pe "compară.ro", așadar un utilizator le poate vedea pe cele relevante pentru el.</p>
+                </section>
+                <section id="designMobil">
+                    <h4>Design Mobil</h4>
+                    <p>Toate elementele au fost făcute și testate pe mobil pentru a asigura calitatea și păstrarea funcționalității.</p>
+                </section>
+                <section id="cookies">
+                    <h4>Cookies</h4>
+                    <p>Pentru senzație de veridicitate, am creat un pop-up care te informează despre politică actuală de cookie-uri și ține minte decizia aleasă.</p>
+                </section>
+            </section>
+            <section id="interfata-tehnologi">
+                <h3>Tehonologi Folosite</h3>
+                <section id="intefata-general">
+                    <h4>General</h4>
+                    <p>Interfață site-ului a fost făcută cu html,css și JS, ne folosind librari externe precum Jquery sau alte framework-uri.</p>
+                </section>
+                <section id="interfata-custom-JS">
+                    <h4>Clasa Javascript</h4>
+                    <p>Pentru a ne mari productivitatea, am creat o clasa în javascript care are funcții folosite des și sunt destul de generale încât pot fi ușor refolosite precum fadeIn/fadeOut. Am adăugat funcționalitate clasei adăugând și funcții care fac cereri http. Ele au fost folosite des pentru a încarcă informații relevante de la server.</p>
+                </section>
+                <section id="interfata-controler">
+                    <h4>Clasa Controler</h4>
+                    <p>Am creat clasa ItemsSliderClass care afișează pe pagina principala produsele și adaugă o modalitate de a naviga printre ele.</p>
+                </section>
+                <section id="interfata-swipe">
+                    <h4>Clasa Swipe</h4>
+                    <p>Pentru interacțiunea cu partea de mobil creat clasa Swipe care permite utilizatorului să gliseze pe ecran în directă în care dorește și cu ajutorul clasei ItemSliderClass să navigheze printre produse.</p>
+                </section>
+                <section id="interfata-svg">
+                    <h4>SVG interfata</h4>
+                    <p>La o anumită adresa se generează un grafic care arată evoluția prețului unui anumit produs. Fiecare graf este generat automat în format SVG în funcție de produsul care este cerut. Acesta este generat la o adresa diferită față de produs pentru a fi afișat în pagina produsului și extensiei printr-un iframe.</p>
+                </section>
+            </section>
+        </section>
+        <section id="doc-arhitectura">
+            <h2>Arhitectura Aplicatiei</h2>
+            <section id="arhitectura-evolutie">
+                <h3>Evolutie Arhitectura</h3>
+                <section id="arhitectura-general">
+                    <h4>General</h4>
+                    <p>Primul pas a fost să dezvoltăm o metodă da a lua informațiile necesare proiectului-ului, dar deoarece un site precum compari.ro are zeci de mii de produse,care se schimbă frecvent, a trebuit să găsim o modalitate de a găsi o balanță între memoria și resursele alocate preluării informațiilor. Noi păstrăm în memorie informații generale despre produs precum numele,link-ul,prețul minim și poză, iar restul informațiilor să fie preluate la rulare când cineva accesează produsul. Deși acest lucru îngreunează semnificativ timpul în care informațiile unui produs sunt afișate, avantajul garanției fidelității informațiilor, memoria salvată și timpul de rulare semnificativ redus a actualizării bazei de date ne-au determinat să alegem această variantă</p>
+                </section>
+                <section id="arhitectura-evolutie-bd">
+                    <h4>Baza de date</h4>
+                    <p>Pentru început am creat o structura unei baze de date care ne permite salvarea informațiilor generale care au fost preluate de pe alte site-uri despre produse. La scurt timp după am creat o tabela în care se află istoricul produselor. La actualizarea acestei tabele am realizat că putem extrage produsele al căror preț a scăzut de la ultima actualizare. Produsele care au avut o scădere a prețului mai mare de 10% au fost puse în altă tabela din baza de date.</p>
+                </section>
+                <section id="arhitectura-evolutie-incarcare">
+                    <h4>Incarcarea datelor</h4>
+                    <p>Am creat un șablon de tip JSON care ne permite să încărcăm cu ușurință site-uri precum compari în baza noastră de date. Astfel cât timp programele de scrapping trimit date care urmează acest șablon, încărcarea lor în baza de date este similară.</p>
+                </section>
+            </section>
+            <section id="arhitectura-tehnologi">
+                <h3>Tehnologi folosite</h3>
+                <section id="arhitectura-tehoologi">
+                    <h4>API Rest</h4>
+                    <p>Pentru a face mai ușoară dezvoltarea site-ului și extensiei, am creat un API REST care ,în funcție de parametrii, da informații despre produs. Această modularitate permit extensiei și site-ului să își ia informațiile despre produs din același loc. </p>
+                </section>
+                <section id="arhitectura-search-optimization">
+                    <h4>Imbunatatirea Search-ului</h4>
+                    <p>Pentru o încărcare mai rapidă a paginii, noi am ales să trimitem doar primele 25 de produse care corespund criteriului de căutare, iar în momentul în care utilizatorul ajunge la finalul paginii se face o cerere AJAX către server de unde va primi următoarele 25 de elemente,până la terminarea lor.</p>
+                </section>
+                <section id="microservice-aut">
+                    <h4>Microserviciul De Autentificare</h4>
+                    <p>Pentru că site-urile de pe care rulează extensia sunt https, a fost necesar să creăm un certificat local pentru a migra site-ul pe https.Acest lucru ne permite transferul de date între server și extensie.</p>
+                </section>
+                <section id="db-class">
+                    <h4>Clasa Database</h4>
+                    <p>Am creat o clasa care manageriază conexiunile cu baza de date, aceasta este făcută după design patternul Singleton.</p>
+                </section>
+                <section id="template-engine">
+                    <h4>Template Engine</h4>
+                    <p>Fiecare pagina este incarcata dintr-un php care parseaza html-urile cu ajutorul unui Template Engine făcut de noi. </p>
+                </section>
+                <section id="information-source">
+                    <h4>Preluarea informatiilor</h4>
+                    <p>Preluarea informațiilor se face din 3 surse, compari,compara și shopify. Pentru compari și compara informațiile sunt luate cu un algoritm de scrapping, iar cei de la shopify au oferit un RSS care este publicat pe site-ul lor.De acolo am putut lua informația pe care o afisam pe prima pagina.</p>
+                </section>
+            </section>
+    </section>
+        <section id="Api-doc">
+            <h2>Documentatie API</h2>
+            <section id="api-prod">
+                <h3>Api-ul pentru produs</h3>
+                <p>API-ul pentru primirea informațiilor despre un anumit produs are 3 parametrii,”name”,”filtre” și “site”. Doar “name” este obligatoriu. Filtrul “name” precizează numele produsului căruia vrem sa ii aflăm informațiile. “filtre” este folosit în caz de vrem un anumit parametru/parametrii, de exemplu dacă dorim să aflăm doar prețul minim și link-ul produsului. “site” este pentru a specifica site-ul din care vrem ca produsul nostru sa facă parte,de exemplu putem specifica ca vrem doar produse din compara.ro. </p>
+            </section>
+            <section id="api-auth">
+                <h3>Api-ul pentru autentificare</h3>
+                <p>API-ul care permite autentificarea prin intermediul micro serviciului are 4 parametrii,”type”,”usrname”,”paswd”,”email. Pentru o logare/înregistrare primii trei parametrii trebuie setați. Parametrul “type” pentru a fi valid trebuie sa fie “Intra” sau “Inregistrare”. Parola este ținută doar în starea ei criptată.</p>
+            </section>
+            <section id="">
+                <h3></h3>
+                <p></p>
+            </section>
+        </section>
+    </section>
+</body>
+</html>
