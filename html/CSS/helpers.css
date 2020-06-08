@@ -25,6 +25,14 @@ footer{
     margin-bottom: 0.5%;
     text-align:center;
 }
+.followRss{
+    text-align: left;
+    font-size: 20px;
+    margin-left:50px;
+}
+.followRss a:link{
+    text-decoration: none;
+}
 @media only screen and (min-width: 1000px) {
 .hidden_l {
         display: none;
