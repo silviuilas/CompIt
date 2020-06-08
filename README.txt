@@ -1,0 +1,1 @@
+Fisierele cu rapoarte le gasiti in html/rapoarte, ele se numesc raportTehnic.html si ghid.html.
