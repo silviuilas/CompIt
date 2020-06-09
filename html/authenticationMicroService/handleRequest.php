@@ -13,7 +13,7 @@ if (isset($_POST["type"])) {
     $user=$db->queryArray("SELECT * from user_info where username='$username'",100);
     if ($_POST["type"] == "Intra") {
         if(password_verify($password,$user[0][2])){
-            response("200","Congrats","");
+            response("200","Congrats",array('id'=>$user[0][0]));
         }
         else{
             response("202","Error","");
