@@ -1,0 +1,33 @@
+
+.comm-wrap {
+    float:left;
+    margin:20px 50px;
+    display:flex;
+    justify-content: center;
+    width: 100%;
+}
+.comm-item {
+    border : 1px solid black;
+    border-radius: 3px;
+    width: 500px;
+}
+.comm-info{
+    border-bottom: 1px solid black;
+}
+.comm-name{
+    margin:0 5px;
+}
+.comm-titlu{
+    margin:0 5px;
+}
+.comm-text {
+    border-bottom: 1px solid black;
+}
+
+.com-items{
+}
+@media only screen and (max-width:500px) and (min-width: 0px) {
+    .comm-item {
+        width: 300px;
+    }
+}

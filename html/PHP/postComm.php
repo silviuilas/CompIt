@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $db->connect();
         $name = trim($_POST["name"]);
         $userId=0;
-        $itemId=0;
+        $itemId=$_SESSION['itemId'];
         if(isset($_SESSION['userId'])){
             $userId=$_SESSION['userId'];
         }
