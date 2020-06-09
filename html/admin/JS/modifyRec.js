@@ -1,9 +1,7 @@
 ///modify rec
 function getModifyRecItems(){
     url=_URL+'/AJAX/modify_rec_prod.php';
-    console.log(url);
     _().post(url,{function:'show'},function(result){
-        console.log(result.data);
         showModifyRecItems(result.data);
     })
 }

@@ -1,9 +1,7 @@
 ///modify rec
 function getComms(){
     url=_URL+'/AJAX/comm_manager.php';
-    console.log(url);
     _().post(url,{function:'show',itemId:'0'},function(result){
-        console.log(result.data);
         showComms(result.data);
     })
 }

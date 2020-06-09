@@ -1,10 +1,7 @@
 function search(elem) {
     if(event.key === 'Enter') {
         url=_URL+'/AJAX/search_ajax.php/?search='+elem.value;
-        console.log(url);
         _().get(url,function(result){
-
-            console.log(result);
             showSearch(result.data);
         })
     }

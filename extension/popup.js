@@ -12,9 +12,7 @@ _(function(){
         chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
             let url = customEncode(tabs[0].url);
             // use `url` here inside the callback because it's asynchronous!
-            console.log(url);
             let _current_url = _URL + "/API/api.php?uri="+url;
-            console.log(_current_url);
             _().ajax({
                 url: _current_url,
                 contentType: "application/json",
