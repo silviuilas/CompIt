@@ -1,7 +1,7 @@
 beautifulsoup4==4.8.2
 essentials==1.1.2
 init==0.1.0
-lxml==4.5.0
+lxml==4.9.1
 PyYAML==5.3
 soupsieve==2.0
 terminal==0.4.0
